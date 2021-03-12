@@ -1,0 +1,24 @@
+.flex{
+    display: flex;
+}
+.box{
+    border: 1px solid black;
+    /* border-style: dotted dashed double solid; */
+    width: 50%;
+    padding: 5px;
+}
+.title{
+    font-size: 24px;
+    color: red;
+    padding: 5px;
+    margin: 5px;
+    font-weight: bold;
+    border-bottom:1px solid black ;
+}
+.content{
+    color: blueviolet;
+    background-color: pink;
+    font-size: 16px;
+    padding: 5px;
+    margin: 5px;
+}
