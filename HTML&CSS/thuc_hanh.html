@@ -4,42 +4,69 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>misa cuk cuk</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://kit.fontawesome.com/b5ed63ed61.js" crossorigin="anonymous"></script>
 </head>
 <body class="flex">
     <div class="left-sile-bar">
-        <img class="image-menu" src="https://websitecuckukvn.misacdn.net/wp-content/uploads/2021/02/logo.svg">
+        <div class="image-menu">
+            <img class="image-menu-icon" src="content/image/toggle.png">
+            <img class="image-menu-logo" src="content/image/cukcuk-logo.png">
+        </div>
         
         <div class="menu-option">
-            Tổng quan
+            <img src="content/icon/dashboard.png">
+            <div >Tổng quan</div>
         </div>
         <div class="menu-option">
-            Báo cáo
+            <img src="content/icon/report.png">
+            <div >Báo cáo</div>
+            
         </div>
         <div class="menu-option">
-            Mua hàng
+            <img src="content/icon/dashboard.png">
+            <div >Mua hàng</div>
+            
         </div>
         <div class="menu-option">
-            Danh mục nhân viên
+            <img src="content/icon/dic-employee.png">
+            <div >Danh mục nhân viên</div>
+            
         </div>
         <div class="menu-option">
-            Thiết lập hệ thống
+            <img src="content/icon/dic-employee.png">
+            <div >Danh mục nhân viên</div>
+            
+        </div>
+        <div class="menu-option">
+            <img src="content/icon/setting.png">
+            <div >Thiết lập hệ thống</div>
+            
         </div>
     </div>
     <div class="right-sile-bar">
-        <div class="header">
-            <select>
+        <div class="header flex">
+            <select class="header-select">
                 <option>Nhà hàng biển đông 1</option>
                 <option>Nhà hàng biển đông 2</option>
                 <option>Nhà hàng biển đông 3</option>
                 <option>Nhà hàng biển đông 4</option>
             </select>
+            <div class="header-acount flex">
+                <img src="content/icon/avatar-default.png">
+                <div>Hoàng Thị Thu Hương</div>
+                <img src="content/icon/option.png">
+            </div>
         </div>
-        <div class="body">
+        <div class="content">
             <div>Danh sách nhân viên</div>
             <div class="flex">
-                <input class="find-table" placeholder="Tìm kiếm theo mã, tên hoặc ố điện thoại...">
+                <div class="find-table flex">
+                    <i class="fas fa-search"></i>
+                    <input placeholder="Tìm kiếm theo mã, tên hoặc ố điện thoại..."> 
+                </div>
+                <!-- <input class="find-table" placeholder="Tìm kiếm theo mã, tên hoặc ố điện thoại..."> -->
                 <select class="box-form-select">
                     <option>Tất cả phòng ban</option>
                 </select>
@@ -47,32 +74,457 @@
                     <option>Tất cả vị trí</option>
                 </select>
             </div>
-            <table  class="table1">
-                <tr>
-                    <td>Mã khách hàng</td>
-                    <td> Họ và tên</td>
-                    <td>Giới tính</td>
-                    <td>Ngày sinh </td>
-                    <td>Nhóm ngành hàng</td>
-                    <td>Điện thoại</td>
-                    <td>Email</td>
-                    <td>Địa chỉ</td>
-                    <td>Số tiền nợ</td>
-                    <td>Mã thẻ thành viên</td>
-                </tr>
-                <tr>
-                    <td>110335932</td>
-                    <td>Hoàng Thị Thu hương</td>
-                    <td>Nữ</td>
-                    <td>11/09/1999</td>
-                    <td>Công nghệ thông tin</td>
-                    <td>0973843806</td>
-                    <td>bebong11091999@gmail.com</td>
-                    <td>Định Công, Hoàng Mai, Hà Nội</td>
-                    <td>0</td>
-                    <td>MF772</td>
-                </tr>
-            </table>
+            <div class="table-eml">
+                <table >
+                    <thead>
+                        <td class="wight-2">Mã khách hàng</td>
+                        <td class="wight-3"> Họ và tên</td>
+                        <td class="wight-1">Giới tính</td>
+                        <td class="wight-1">Ngày sinh </td>
+                        <td class="wight-2">Nhóm ngành hàng</td>
+                        <td class="wight-1">Điện thoại</td>
+                        <td class="wight-3">Email</td>
+                        <td class="wight-3">Địa chỉ</td>
+                        <td class="wight-1">Số tiền nợ</td>
+                        <td class="wight-1">Mã thẻ thành viên</td>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="wight-2">110335932</td>
+                            <td class="wight-3">Hoàng Thị Thu hương</td>
+                            <td class="wight-1">Nữ</td>
+                            <td class="wight-1">11/09/1999</td>
+                            <td class="wight-2">Công nghệ thông tin</td>
+                            <td class="wight-1">0973843806</td>
+                            <td class="wight-3">bebong11091999@gmail.com</td>
+                            <td class="wight-3">Định Công, Hoàng Mai, Hà Nội</td>
+                            <td class="wight-1">0</td>
+                            <td class="wight-1">MF772</td>
+                        </tr>
+                        <tr>
+                            <td class="wight-2">110335932</td>
+                            <td class="wight-3">Hoàng Thị Thu hương</td>
+                            <td class="wight-1">Nữ</td>
+                            <td class="wight-1">11/09/1999</td>
+                            <td class="wight-2">Công nghệ thông tin</td>
+                            <td class="wight-1">0973843806</td>
+                            <td class="wight-3">bebong11091999@gmail.com</td>
+                            <td class="wight-3">Định Công, Hoàng Mai, Hà Nội</td>
+                            <td class="wight-1">0</td>
+                            <td class="wight-1">MF772</td>
+                        </tr>
+                        <tr>
+                            <td class="wight-2">110335932</td>
+                            <td class="wight-3">Hoàng Thị Thu hương</td>
+                            <td class="wight-1">Nữ</td>
+                            <td class="wight-1">11/09/1999</td>
+                            <td class="wight-2">Công nghệ thông tin</td>
+                            <td class="wight-1">0973843806</td>
+                            <td class="wight-3">bebong11091999@gmail.com</td>
+                            <td class="wight-3">Định Công, Hoàng Mai, Hà Nội</td>
+                            <td class="wight-1">0</td>
+                            <td class="wight-1">MF772</td>
+                        </tr>
+                        <tr>
+                            <td class="wight-2">110335932</td>
+                            <td class="wight-3">Hoàng Thị Thu hương</td>
+                            <td class="wight-1">Nữ</td>
+                            <td class="wight-1">11/09/1999</td>
+                            <td class="wight-2">Công nghệ thông tin</td>
+                            <td class="wight-1">0973843806</td>
+                            <td class="wight-3">bebong11091999@gmail.com</td>
+                            <td class="wight-3">Định Công, Hoàng Mai, Hà Nội</td>
+                            <td class="wight-1">0</td>
+                            <td class="wight-1">MF772</td>
+                        </tr>
+                        <tr>
+                            <td class="wight-2">110335932</td>
+                            <td class="wight-3">Hoàng Thị Thu hương</td>
+                            <td class="wight-1">Nữ</td>
+                            <td class="wight-1">11/09/1999</td>
+                            <td class="wight-2">Công nghệ thông tin</td>
+                            <td class="wight-1">0973843806</td>
+                            <td class="wight-3">bebong11091999@gmail.com</td>
+                            <td class="wight-3">Định Công, Hoàng Mai, Hà Nội</td>
+                            <td class="wight-1">0</td>
+                            <td class="wight-1">MF772</td>
+                        </tr>
+                        <tr>
+                            <td class="wight-2">110335932</td>
+                            <td class="wight-3">Hoàng Thị Thu hương</td>
+                            <td class="wight-1">Nữ</td>
+                            <td class="wight-1">11/09/1999</td>
+                            <td class="wight-2">Công nghệ thông tin</td>
+                            <td class="wight-1">0973843806</td>
+                            <td class="wight-3">bebong11091999@gmail.com</td>
+                            <td class="wight-3">Định Công, Hoàng Mai, Hà Nội</td>
+                            <td class="wight-1">0</td>
+                            <td class="wight-1">MF772</td>
+                        </tr>
+                        <tr>
+                            <td class="wight-2">110335932</td>
+                            <td class="wight-3">Hoàng Thị Thu hương</td>
+                            <td class="wight-1">Nữ</td>
+                            <td class="wight-1">11/09/1999</td>
+                            <td class="wight-2">Công nghệ thông tin</td>
+                            <td class="wight-1">0973843806</td>
+                            <td class="wight-3">bebong11091999@gmail.com</td>
+                            <td class="wight-3">Định Công, Hoàng Mai, Hà Nội</td>
+                            <td class="wight-1">0</td>
+                            <td class="wight-1">MF772</td>
+                        </tr>
+                        <tr>
+                            <td class="wight-2">110335932</td>
+                            <td class="wight-3">Hoàng Thị Thu hương</td>
+                            <td class="wight-1">Nữ</td>
+                            <td class="wight-1">11/09/1999</td>
+                            <td class="wight-2">Công nghệ thông tin</td>
+                            <td class="wight-1">0973843806</td>
+                            <td class="wight-3">bebong11091999@gmail.com</td>
+                            <td class="wight-3">Định Công, Hoàng Mai, Hà Nội</td>
+                            <td class="wight-1">0</td>
+                            <td class="wight-1">MF772</td>
+                        </tr>
+                        <tr>
+                            <td class="wight-2">110335932</td>
+                            <td class="wight-3">Hoàng Thị Thu hương</td>
+                            <td class="wight-1">Nữ</td>
+                            <td class="wight-1">11/09/1999</td>
+                            <td class="wight-2">Công nghệ thông tin</td>
+                            <td class="wight-1">0973843806</td>
+                            <td class="wight-3">bebong11091999@gmail.com</td>
+                            <td class="wight-3">Định Công, Hoàng Mai, Hà Nội</td>
+                            <td class="wight-1">0</td>
+                            <td class="wight-1">MF772</td>
+                        </tr>
+                        <tr>
+                            <td class="wight-2">110335932</td>
+                            <td class="wight-3">Hoàng Thị Thu hương</td>
+                            <td class="wight-1">Nữ</td>
+                            <td class="wight-1">11/09/1999</td>
+                            <td class="wight-2">Công nghệ thông tin</td>
+                            <td class="wight-1">0973843806</td>
+                            <td class="wight-3">bebong11091999@gmail.com</td>
+                            <td class="wight-3">Định Công, Hoàng Mai, Hà Nội</td>
+                            <td class="wight-1">0</td>
+                            <td class="wight-1">MF772</td>
+                        </tr>
+                        <tr>
+                            <td class="wight-2">110335932</td>
+                            <td class="wight-3">Hoàng Thị Thu hương</td>
+                            <td class="wight-1">Nữ</td>
+                            <td class="wight-1">11/09/1999</td>
+                            <td class="wight-2">Công nghệ thông tin</td>
+                            <td class="wight-1">0973843806</td>
+                            <td class="wight-3">bebong11091999@gmail.com</td>
+                            <td class="wight-3">Định Công, Hoàng Mai, Hà Nội</td>
+                            <td class="wight-1">0</td>
+                            <td class="wight-1">MF772</td>
+                        </tr>
+                        <tr>
+                            <td class="wight-2">110335932</td>
+                            <td class="wight-3">Hoàng Thị Thu hương</td>
+                            <td class="wight-1">Nữ</td>
+                            <td class="wight-1">11/09/1999</td>
+                            <td class="wight-2">Công nghệ thông tin</td>
+                            <td class="wight-1">0973843806</td>
+                            <td class="wight-3">bebong11091999@gmail.com</td>
+                            <td class="wight-3">Định Công, Hoàng Mai, Hà Nội</td>
+                            <td class="wight-1">0</td>
+                            <td class="wight-1">MF772</td>
+                        </tr>
+                        <tr>
+                            <td class="wight-2">110335932</td>
+                            <td class="wight-3">Hoàng Thị Thu hương</td>
+                            <td class="wight-1">Nữ</td>
+                            <td class="wight-1">11/09/1999</td>
+                            <td class="wight-2">Công nghệ thông tin</td>
+                            <td class="wight-1">0973843806</td>
+                            <td class="wight-3">bebong11091999@gmail.com</td>
+                            <td class="wight-3">Định Công, Hoàng Mai, Hà Nội</td>
+                            <td class="wight-1">0</td>
+                            <td class="wight-1">MF772</td>
+                        </tr>
+                        <tr>
+                            <td class="wight-2">110335932</td>
+                            <td class="wight-3">Hoàng Thị Thu hương</td>
+                            <td class="wight-1">Nữ</td>
+                            <td class="wight-1">11/09/1999</td>
+                            <td class="wight-2">Công nghệ thông tin</td>
+                            <td class="wight-1">0973843806</td>
+                            <td class="wight-3">bebong11091999@gmail.com</td>
+                            <td class="wight-3">Định Công, Hoàng Mai, Hà Nội</td>
+                            <td class="wight-1">0</td>
+                            <td class="wight-1">MF772</td>
+                        </tr>
+                        <tr>
+                            <td class="wight-2">110335932</td>
+                            <td class="wight-3">Hoàng Thị Thu hương</td>
+                            <td class="wight-1">Nữ</td>
+                            <td class="wight-1">11/09/1999</td>
+                            <td class="wight-2">Công nghệ thông tin</td>
+                            <td class="wight-1">0973843806</td>
+                            <td class="wight-3">bebong11091999@gmail.com</td>
+                            <td class="wight-3">Định Công, Hoàng Mai, Hà Nội</td>
+                            <td class="wight-1">0</td>
+                            <td class="wight-1">MF772</td>
+                        </tr>
+                        <tr>
+                            <td class="wight-2">110335932</td>
+                            <td class="wight-3">Hoàng Thị Thu hương</td>
+                            <td class="wight-1">Nữ</td>
+                            <td class="wight-1">11/09/1999</td>
+                            <td class="wight-2">Công nghệ thông tin</td>
+                            <td class="wight-1">0973843806</td>
+                            <td class="wight-3">bebong11091999@gmail.com</td>
+                            <td class="wight-3">Định Công, Hoàng Mai, Hà Nội</td>
+                            <td class="wight-1">0</td>
+                            <td class="wight-1">MF772</td>
+                        </tr>
+                        <tr>
+                            <td class="wight-2">110335932</td>
+                            <td class="wight-3">Hoàng Thị Thu hương</td>
+                            <td class="wight-1">Nữ</td>
+                            <td class="wight-1">11/09/1999</td>
+                            <td class="wight-2">Công nghệ thông tin</td>
+                            <td class="wight-1">0973843806</td>
+                            <td class="wight-3">bebong11091999@gmail.com</td>
+                            <td class="wight-3">Định Công, Hoàng Mai, Hà Nội</td>
+                            <td class="wight-1">0</td>
+                            <td class="wight-1">MF772</td>
+                        </tr>
+                        <tr>
+                            <td class="wight-2">110335932</td>
+                            <td class="wight-3">Hoàng Thị Thu hương</td>
+                            <td class="wight-1">Nữ</td>
+                            <td class="wight-1">11/09/1999</td>
+                            <td class="wight-2">Công nghệ thông tin</td>
+                            <td class="wight-1">0973843806</td>
+                            <td class="wight-3">bebong11091999@gmail.com</td>
+                            <td class="wight-3">Định Công, Hoàng Mai, Hà Nội</td>
+                            <td class="wight-1">0</td>
+                            <td class="wight-1">MF772</td>
+                        </tr>
+                        <tr>
+                            <td class="wight-2">110335932</td>
+                            <td class="wight-3">Hoàng Thị Thu hương</td>
+                            <td class="wight-1">Nữ</td>
+                            <td class="wight-1">11/09/1999</td>
+                            <td class="wight-2">Công nghệ thông tin</td>
+                            <td class="wight-1">0973843806</td>
+                            <td class="wight-3">bebong11091999@gmail.com</td>
+                            <td class="wight-3">Định Công, Hoàng Mai, Hà Nội</td>
+                            <td class="wight-1">0</td>
+                            <td class="wight-1">MF772</td>
+                        </tr>
+                        <tr>
+                            <td class="wight-2">110335932</td>
+                            <td class="wight-3">Hoàng Thị Thu hương</td>
+                            <td class="wight-1">Nữ</td>
+                            <td class="wight-1">11/09/1999</td>
+                            <td class="wight-2">Công nghệ thông tin</td>
+                            <td class="wight-1">0973843806</td>
+                            <td class="wight-3">bebong11091999@gmail.com</td>
+                            <td class="wight-3">Định Công, Hoàng Mai, Hà Nội</td>
+                            <td class="wight-1">0</td>
+                            <td class="wight-1">MF772</td>
+                        </tr>
+                        <tr>
+                            <td class="wight-2">110335932</td>
+                            <td class="wight-3">Hoàng Thị Thu hương</td>
+                            <td class="wight-1">Nữ</td>
+                            <td class="wight-1">11/09/1999</td>
+                            <td class="wight-2">Công nghệ thông tin</td>
+                            <td class="wight-1">0973843806</td>
+                            <td class="wight-3">bebong11091999@gmail.com</td>
+                            <td class="wight-3">Định Công, Hoàng Mai, Hà Nội</td>
+                            <td class="wight-1">0</td>
+                            <td class="wight-1">MF772</td>
+                        </tr>
+                        <tr>
+                            <td class="wight-2">110335932</td>
+                            <td class="wight-3">Hoàng Thị Thu hương</td>
+                            <td class="wight-1">Nữ</td>
+                            <td class="wight-1">11/09/1999</td>
+                            <td class="wight-2">Công nghệ thông tin</td>
+                            <td class="wight-1">0973843806</td>
+                            <td class="wight-3">bebong11091999@gmail.com</td>
+                            <td class="wight-3">Định Công, Hoàng Mai, Hà Nội</td>
+                            <td class="wight-1">0</td>
+                            <td class="wight-1">MF772</td>
+                        </tr>
+                        <tr>
+                            <td class="wight-2">110335932</td>
+                            <td class="wight-3">Hoàng Thị Thu hương</td>
+                            <td class="wight-1">Nữ</td>
+                            <td class="wight-1">11/09/1999</td>
+                            <td class="wight-2">Công nghệ thông tin</td>
+                            <td class="wight-1">0973843806</td>
+                            <td class="wight-3">bebong11091999@gmail.com</td>
+                            <td class="wight-3">Định Công, Hoàng Mai, Hà Nội</td>
+                            <td class="wight-1">0</td>
+                            <td class="wight-1">MF772</td>
+                        </tr>
+                        <tr>
+                            <td class="wight-2">110335932</td>
+                            <td class="wight-3">Hoàng Thị Thu hương</td>
+                            <td class="wight-1">Nữ</td>
+                            <td class="wight-1">11/09/1999</td>
+                            <td class="wight-2">Công nghệ thông tin</td>
+                            <td class="wight-1">0973843806</td>
+                            <td class="wight-3">bebong11091999@gmail.com</td>
+                            <td class="wight-3">Định Công, Hoàng Mai, Hà Nội</td>
+                            <td class="wight-1">0</td>
+                            <td class="wight-1">MF772</td>
+                        </tr>
+                        <tr>
+                            <td class="wight-2">110335932</td>
+                            <td class="wight-3">Hoàng Thị Thu hương</td>
+                            <td class="wight-1">Nữ</td>
+                            <td class="wight-1">11/09/1999</td>
+                            <td class="wight-2">Công nghệ thông tin</td>
+                            <td class="wight-1">0973843806</td>
+                            <td class="wight-3">bebong11091999@gmail.com</td>
+                            <td class="wight-3">Định Công, Hoàng Mai, Hà Nội</td>
+                            <td class="wight-1">0</td>
+                            <td class="wight-1">MF772</td>
+                        </tr>
+                        <tr>
+                            <td class="wight-2">110335932</td>
+                            <td class="wight-3">Hoàng Thị Thu hương</td>
+                            <td class="wight-1">Nữ</td>
+                            <td class="wight-1">11/09/1999</td>
+                            <td class="wight-2">Công nghệ thông tin</td>
+                            <td class="wight-1">0973843806</td>
+                            <td class="wight-3">bebong11091999@gmail.com</td>
+                            <td class="wight-3">Định Công, Hoàng Mai, Hà Nội</td>
+                            <td class="wight-1">0</td>
+                            <td class="wight-1">MF772</td>
+                        </tr>
+                        <tr>
+                            <td class="wight-2">110335932</td>
+                            <td class="wight-3">Hoàng Thị Thu hương</td>
+                            <td class="wight-1">Nữ</td>
+                            <td class="wight-1">11/09/1999</td>
+                            <td class="wight-2">Công nghệ thông tin</td>
+                            <td class="wight-1">0973843806</td>
+                            <td class="wight-3">bebong11091999@gmail.com</td>
+                            <td class="wight-3">Định Công, Hoàng Mai, Hà Nội</td>
+                            <td class="wight-1">0</td>
+                            <td class="wight-1">MF772</td>
+                        </tr>
+                        <tr>
+                            <td class="wight-2">110335932</td>
+                            <td class="wight-3">Hoàng Thị Thu hương</td>
+                            <td class="wight-1">Nữ</td>
+                            <td class="wight-1">11/09/1999</td>
+                            <td class="wight-2">Công nghệ thông tin</td>
+                            <td class="wight-1">0973843806</td>
+                            <td class="wight-3">bebong11091999@gmail.com</td>
+                            <td class="wight-3">Định Công, Hoàng Mai, Hà Nội</td>
+                            <td class="wight-1">0</td>
+                            <td class="wight-1">MF772</td>
+                        </tr>
+                        <tr>
+                            <td class="wight-2">110335932</td>
+                            <td class="wight-3">Hoàng Thị Thu hương</td>
+                            <td class="wight-1">Nữ</td>
+                            <td class="wight-1">11/09/1999</td>
+                            <td class="wight-2">Công nghệ thông tin</td>
+                            <td class="wight-1">0973843806</td>
+                            <td class="wight-3">bebong11091999@gmail.com</td>
+                            <td class="wight-3">Định Công, Hoàng Mai, Hà Nội</td>
+                            <td class="wight-1">0</td>
+                            <td class="wight-1">MF772</td>
+                        </tr>
+                        <tr>
+                            <td class="wight-2">110335932</td>
+                            <td class="wight-3">Hoàng Thị Thu hương</td>
+                            <td class="wight-1">Nữ</td>
+                            <td class="wight-1">11/09/1999</td>
+                            <td class="wight-2">Công nghệ thông tin</td>
+                            <td class="wight-1">0973843806</td>
+                            <td class="wight-3">bebong11091999@gmail.com</td>
+                            <td class="wight-3">Định Công, Hoàng Mai, Hà Nội</td>
+                            <td class="wight-1">0</td>
+                            <td class="wight-1">MF772</td>
+                        </tr>
+                        <tr>
+                            <td class="wight-2">110335932</td>
+                            <td class="wight-3">Hoàng Thị Thu hương</td>
+                            <td class="wight-1">Nữ</td>
+                            <td class="wight-1">11/09/1999</td>
+                            <td class="wight-2">Công nghệ thông tin</td>
+                            <td class="wight-1">0973843806</td>
+                            <td class="wight-3">bebong11091999@gmail.com</td>
+                            <td class="wight-3">Định Công, Hoàng Mai, Hà Nội</td>
+                            <td class="wight-1">0</td>
+                            <td class="wight-1">MF772</td>
+                        </tr>
+                        <tr>
+                            <td class="wight-2">110335932</td>
+                            <td class="wight-3">Hoàng Thị Thu hương</td>
+                            <td class="wight-1">Nữ</td>
+                            <td class="wight-1">11/09/1999</td>
+                            <td class="wight-2">Công nghệ thông tin</td>
+                            <td class="wight-1">0973843806</td>
+                            <td class="wight-3">bebong11091999@gmail.com</td>
+                            <td class="wight-3">Định Công, Hoàng Mai, Hà Nội</td>
+                            <td class="wight-1">0</td>
+                            <td class="wight-1">MF772</td>
+                        </tr>
+                        <tr>
+                            <td class="wight-2">110335932</td>
+                            <td class="wight-3">Hoàng Thị Thu hương</td>
+                            <td class="wight-1">Nữ</td>
+                            <td class="wight-1">11/09/1999</td>
+                            <td class="wight-2">Công nghệ thông tin</td>
+                            <td class="wight-1">0973843806</td>
+                            <td class="wight-3">bebong11091999@gmail.com</td>
+                            <td class="wight-3">Định Công, Hoàng Mai, Hà Nội</td>
+                            <td class="wight-1">0</td>
+                            <td class="wight-1">MF772</td>
+                        </tr>
+                        <tr>
+                            <td class="wight-2">110335932</td>
+                            <td class="wight-3">Hoàng Thị Thu hương</td>
+                            <td class="wight-1">Nữ</td>
+                            <td class="wight-1">11/09/1999</td>
+                            <td class="wight-2">Công nghệ thông tin</td>
+                            <td class="wight-1">0973843806</td>
+                            <td class="wight-3">bebong11091999@gmail.com</td>
+                            <td class="wight-3">Định Công, Hoàng Mai, Hà Nội</td>
+                            <td class="wight-1">0</td>
+                            <td class="wight-1">MF772</td>
+                        </tr>
+                        <tr>
+                            <td class="wight-2">110335932</td>
+                            <td class="wight-3">Hoàng Thị Thu hương</td>
+                            <td class="wight-1">Nữ</td>
+                            <td class="wight-1">11/09/1999</td>
+                            <td class="wight-2">Công nghệ thông tin</td>
+                            <td class="wight-1">0973843806</td>
+                            <td class="wight-3">bebong11091999@gmail.com</td>
+                            <td class="wight-3">Định Công, Hoàng Mai, Hà Nội</td>
+                            <td class="wight-1">0</td>
+                            <td class="wight-1">MF772</td>
+                        </tr>
+                        <tr>
+                            <td class="wight-2">110335932</td>
+                            <td class="wight-3">Hoàng Thị Thu hương</td>
+                            <td class="wight-1">Nữ</td>
+                            <td class="wight-1">11/09/1999</td>
+                            <td class="wight-2">Công nghệ thông tin</td>
+                            <td class="wight-1">0973843806</td>
+                            <td class="wight-3">bebong11091999@gmail.com</td>
+                            <td class="wight-3">Định Công, Hoàng Mai, Hà Nội</td>
+                            <td class="wight-1">0</td>
+                            <td class="wight-1">MF772</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
         </div>
     </div>
     
