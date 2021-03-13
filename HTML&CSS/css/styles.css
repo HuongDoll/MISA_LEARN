@@ -36,7 +36,6 @@
     padding: 8px;
 }
 .content{
-    height: max-content;
     padding: 8px;
 }
 .image-menu{
@@ -53,15 +52,18 @@
 }
 .menu-option{
     border-bottom: 1px solid rgb(221, 218, 218);
-    display: flex;
+    vertical-align: middle;
+    padding: 8px;
 }
 .menu-option img {
     width: 25px;
     height: 25px;
     align-items: center;
+    margin-right: 8px;
 }
-.menu-option div{
-    padding: 8px;
+.menu-option span{
+    vertical-align: middle;
+}
 }
 .menu-option:hover{
     background-color: rgb(214, 216, 219);
@@ -81,9 +83,11 @@
 }
 .find-table input{
     border: none;
+    outline: none;
 }
 .find-table i{
     color: rgb(179, 175, 175);
+    margin-right: 4px;
 }
 .table-eml{
     width: 100%;
@@ -101,13 +105,9 @@
 .table-eml tbody{
     display:block;
     overflow: auto;
-    max-height: calc(100vh - 200px);
+    max-height: calc(100vh - 300px);
   }
-.table-eml table {
-    border-collapse: collapse;
-    border-spacing: 0;
-    table-layout: fixed;
-}
+
 .wight-1{
     min-width: 100px;
 }
@@ -119,4 +119,38 @@
 }
 .wight-4{
     min-width: 400px;
+}
+.button-add-eml{
+    background-color: green;
+    border-color: rgb(179, 175, 175);
+    padding: 4px;
+    position: absolute;
+    right: 0px;
+}
+.button-add-eml span{
+    color: white;
+    margin: 4px;
+    margin-bottom: 8px;
+}
+.button-add-eml img{
+    color: white;
+    width: 25px;
+    margin: 0px;
+}
+.content-title{
+    height: 50px;
+    vertical-align: middle;
+}
+.content-title span{
+    vertical-align: middle;
+}
+.content-title .title-content{
+    padding: 8px;
+}
+.button-refresh{
+    position: absolute;
+    right: 0px;
+    margin: 4px;
+    width: 35px;
+    height: 35px;
 }

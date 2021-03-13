@@ -1,0 +1,71 @@
+body{
+    width: 100%;
+}
+.tab-close{
+    text-align: right;
+    margin: 8px;
+}
+.title{
+    padding: 8px;
+}
+.content{
+    display: flex;
+    padding: 8px;
+}
+.content-left{
+    width: 25%;
+    text-align: center;
+    padding: 8px;
+}
+.content-left img{
+    width: 75%;
+    border-radius: 50%;
+    border: 1px solid black;
+    margin-top: 50px;
+}
+.content-right{
+    width: 75%;
+    padding: 8px;
+}
+.content-name{
+    padding-top: 20px;
+}
+.group-input{
+    display: flex;
+    margin-bottom: 8px;
+}
+.group-input .group{
+    width: 50%;
+    padding-top: 8px;
+}
+.group input{
+    width: 90%;
+    height: 30px;
+}
+.group-input .group label{
+    padding-bottom: 8px;
+}
+.footer{
+    padding: 8px;
+    padding-right: 40px;
+    text-align: right;
+    vertical-align: middle;
+    background-color: grey;
+}
+.button-delete{
+    height: 40px;
+    background: none;
+    border: none;
+}
+.button-save{
+    height: 40px;
+    background-color: rgb(27, 126, 27);
+    border: 1px solid grey;
+    vertical-align: middle;
+}
+.button-save span{
+    vertical-align: middle;
+}
+.button-save i{
+    font-size: 25px;
+}
