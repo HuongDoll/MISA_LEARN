@@ -6,22 +6,19 @@ body{
     margin: 8px;
 }
 .title{
-    padding: 8px;
+    padding: 20px;
 }
 .parent-content{
-    background-color: hotpink;
     padding: 8px;
 }
 .content{
     display: flex;
     padding: 8px;
-    background-color: khaki;
 }
 .content-left{
     text-align: center;
     padding-left: 32px;
     padding-top: 8px;
-    background-color: ivory;
 }
 .content-left img{
     width: 75%;
@@ -36,7 +33,6 @@ body{
 .group-input{
     display: flex;
     margin-bottom: 8px;
-    background-color: lightcoral;
 }
 .group-input .group{
     padding: 8px;
@@ -62,7 +58,6 @@ body{
 .content-down{
     padding: 8px;
     margin-left: 32px;
-    background-color: lightblue;
 }
 .footer{
     padding: 8px;
@@ -79,7 +74,6 @@ body{
 }
 .button-save{
     height: 40px;
-    background-color: rgb(27, 126, 27);
     border: 1px solid grey;
     border-radius: 5px;
     vertical-align: middle;
