@@ -4,6 +4,9 @@
     border-right: 1px solid black;
     padding: 8px;
 }
+:root{
+    primary : #01B075
+}
 .right-sile-bar{
     width: calc(100% - 220px);
 }
@@ -64,9 +67,8 @@
 .menu-option span{
     vertical-align: middle;
 }
-}
 .menu-option:hover{
-    background-color: rgb(214, 216, 219);
+    background-color: rgb(96, 138, 201);
 }
 .box-form-select{
     vertical-align :middle;
