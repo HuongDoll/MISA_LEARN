@@ -1,5 +1,18 @@
-body{
+.dialog{
+    background-color: rgb(71, 69, 69, 0.6);
     width: 100%;
+    height: 100vh;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+}
+.dialog-child{
+    background-color: white;
+    max-width: 800px;
+    max-height: 800px;
+    position: absolute;
+    top: calc(50% - 400px);
+    left: calc(50% - 400px);
 }
 .tab-close{
     text-align: right;
@@ -7,11 +20,15 @@ body{
 }
 .title{
     padding: 20px;
+    padding-left: 40px;
+    font-size: 24px;
+    font-weight: bold;
 }
 .parent-content{
     padding: 8px;
+    padding-right: 30px;
 }
-.content{
+.content-dialog{
     display: flex;
     padding: 8px;
 }
@@ -43,6 +60,13 @@ body{
     border-radius: 5px;
     border: 1px solid gray;
     outline: none;
+    padding-left: 8px;
+}
+.group select{
+    width: calc(100% + 12px);
+    height: 44px;
+    border-radius: 5px;
+    outline: none;
 }
 .group-input .group label{
     padding-bottom: 8px;
@@ -50,11 +74,25 @@ body{
 }
 .radio-sex{
     vertical-align: middle;
-    margin-right: 16px;
+    margin-right: 8px;
 }
 .radio-sex span{
     vertical-align: middle;
 }
+.group-sex input{
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    outline: none;
+    position: relative;
+    top: 4px;
+}
+.group-sex div{
+    padding-bottom: 8px;
+    padding-top: 8px;
+}
+
 .content-down{
     padding: 8px;
     margin-left: 32px;
@@ -64,7 +102,7 @@ body{
     padding-right: 20px;
     text-align: right;
     vertical-align: middle;
-    background-color: grey;
+    background-color: rgb(184, 179, 179);
 }
 .button-delete{
     height: 40px;
@@ -74,10 +112,10 @@ body{
 }
 .button-save{
     height: 40px;
-    border: 1px solid grey;
+    border: 1px solid rgb(12, 97, 57);
     border-radius: 5px;
     vertical-align: middle;
-    
+    background-color: rgb(12, 97, 57);
     outline: none;
 }
 .button-save span{

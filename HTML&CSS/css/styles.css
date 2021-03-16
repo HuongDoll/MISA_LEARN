@@ -4,9 +4,7 @@
     border-right: 1px solid black;
     padding: 8px;
 }
-:root{
-    primary : #01B075
-}
+
 .right-sile-bar{
     width: calc(100% - 220px);
 }
