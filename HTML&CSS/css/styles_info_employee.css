@@ -1,3 +1,35 @@
+/* css dialog sửa xóa khách hàng */
+.mini-dialog{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+}
+.mini-select{
+    background-color: white;
+    position: absolute;
+    top: calc(50% - 400px);
+    left: calc(50% - 400px);
+    padding: 8px;
+    border-radius: 10px;
+    border-top-right-radius: 0px;
+    border: 1px solid gray;
+    box-shadow: 5px 10px 8px #888888;
+}
+.mini-select button{
+    margin: 4px;
+    width: 30px;
+    height: 30px;
+}
+.mini-select button i{
+    font-size: 16px;
+    color: gray;
+}
+.mini-select button i:hover{
+    color: black;
+}
+/* css dialog form thông tin khách hàng */
 .dialog{
     background-color: rgb(71, 69, 69, 0.6);
     width: 100%;
@@ -14,6 +46,7 @@
     top: calc(50% - 400px);
     left: calc(50% - 400px);
 }
+
 .tab-close{
     text-align: right;
     margin: 8px;
@@ -26,7 +59,7 @@
 }
 .parent-content{
     padding: 8px;
-    padding-right: 30px;
+    padding-right: 40px;
 }
 .content-dialog{
     display: flex;
@@ -124,6 +157,7 @@
 .button-save i{
     font-size: 25px;
 }
+/* định dang độ rộng */
 .wight-1-3{
     width: 33.333333333333333333333333333333333%;
 }
@@ -135,4 +169,8 @@
 }
 .wight-full{
     width: 100%;
+}
+/* important */
+.text-red{
+    color: red;
 }

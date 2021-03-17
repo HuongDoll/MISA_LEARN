@@ -1,44 +1,14 @@
+body{
+    margin: 0;
+}
+/* menu trái */
 .left-sile-bar{
     width: 220px;
-    height:100vh;
-    border-right: 1px solid black;
+    height:calc(100vh - 16px);
+    border-right: 1px solid gray;
     padding: 8px;
 }
-
-.right-sile-bar{
-    width: calc(100% - 220px);
-}
-.flex{
-    display: flex;
-}
-.header{
-    height: 50px;
-    border-bottom: 1px solid black;
-    padding: 8px;
-}
-.header select{
-    vertical-align :middle;
-    padding: 8px;
-    border-color: white;
-    outline: none;
-}
-.header option{
-    outline: none;
-}
-.header-acount{
-    position: absolute;
-    right: 0px;
-    align-items: center;
-}
-.header-acount img{
-    width: 25px;
-}
-.header-acount div{
-    padding: 8px;
-}
-.content{
-    padding: 8px;
-}
+/* menu chính */
 .image-menu{
     width: 100%;
     height: 50px;
@@ -51,8 +21,8 @@
     width: 130px;
     vertical-align :middle;
 }
+/* tùy chỉnh lựa chọn  */
 .menu-option{
-    border-bottom: 1px solid rgb(221, 218, 218);
     vertical-align: middle;
     padding: 8px;
 }
@@ -66,8 +36,100 @@
     vertical-align: middle;
 }
 .menu-option:hover{
-    background-color: rgb(96, 138, 201);
+    background-color: whitesmoke;
 }
+
+.right-sile-bar{
+    /* content phải */
+    width: calc(100% - 220px);
+}
+.flex{
+    /* trên cùng 1 dòng */
+    display: flex;
+}
+.header{
+    /* phẩn header */
+    height: 50px;
+    border-bottom: 1px solid gray;
+    padding: 8px;
+}
+ /* tilte */
+.content-title{
+    height: 50px;
+    vertical-align: middle;
+}
+.content-title span{
+    vertical-align: middle;
+}
+.content-title .title-content{
+    padding: 8px;
+    font-size: 20px;
+}
+
+/* button thêm khách hàng */
+.button-add-eml{
+    background-color: green;
+    border-color: rgb(179, 175, 175);
+    padding: 4px;
+    position: absolute;
+    right: 8px;
+    outline: none;
+}
+.button-add-eml span{
+    color: white;
+    margin: 4px;
+    margin-bottom: 8px;
+}
+.button-add-eml img{
+    color: white;
+    width: 25px;
+    margin: 0px;
+}
+
+.button-refresh{
+    position: absolute;
+    margin-top: 4px;
+    right: 8px;
+    width: 35px;
+    height: 35px;
+    background-color: white;
+    outline: none;
+    border: 1px solid rgb(179, 175, 175);
+}
+.button-refresh:hover{
+    background-color: rgb(212, 206, 206);
+}
+/* tùy chọn nhà hàng */
+.header select{
+    vertical-align :middle;
+    padding: 8px;
+    border-color: white;
+    outline: none;
+}
+.header option{
+    outline: none;
+}
+/* mini acount */
+.header-acount{
+    position: absolute;
+    right: 8px;
+    align-items: center;
+}
+.header-acount .option-image{
+    width: 20px;
+    height: 20px;
+}
+.header-acount .avt{
+    width: 40px;
+}
+.header-acount div{
+    padding: 8px;
+}
+.content{
+    padding: 8px;
+}
+
+/* filter */
 .box-form-select{
     vertical-align :middle;
     padding: 8px;
@@ -89,6 +151,10 @@
     color: rgb(179, 175, 175);
     margin-right: 4px;
 }
+
+table{
+    margin: 0;
+}
 .table-eml{
     width: 100%;
     overflow-x: auto;
@@ -97,6 +163,9 @@
     border-bottom: 1px solid rgb(179, 175, 175);
     display: block;
     padding: 12px;
+}
+.table-eml tr:hover{
+    background-color: whitesmoke;
 }
 .table-eml thead{
     font-weight: bold;
@@ -107,7 +176,30 @@
     overflow: auto;
     max-height: calc(100vh - 300px);
   }
+/* scrollbar */
+::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+  }
+ 
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+}
 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: gray; 
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(77, 76, 76); 
+    
+}
+/* định dạng độ rộng phần tử */
 .wight-1{
     min-width: 100px;
 }
@@ -119,38 +211,4 @@
 }
 .wight-4{
     min-width: 400px;
-}
-.button-add-eml{
-    background-color: green;
-    border-color: rgb(179, 175, 175);
-    padding: 4px;
-    position: absolute;
-    right: 0px;
-}
-.button-add-eml span{
-    color: white;
-    margin: 4px;
-    margin-bottom: 8px;
-}
-.button-add-eml img{
-    color: white;
-    width: 25px;
-    margin: 0px;
-}
-.content-title{
-    height: 50px;
-    vertical-align: middle;
-}
-.content-title span{
-    vertical-align: middle;
-}
-.content-title .title-content{
-    padding: 8px;
-}
-.button-refresh{
-    position: absolute;
-    right: 0px;
-    margin: 4px;
-    width: 35px;
-    height: 35px;
 }
