@@ -195,11 +195,11 @@ function validateCustomer(customer) {
             return false;
         }
     }
-    // if(customer.Email != "" && !customer.Email.match(mailformat)){
-    //     alert("Nhập đúng email!");
-    //     $('#Email').focus();
-    //     return false;
-    // }
+    if(customer.Email != "" && !customer.Email.match(mailformat)){
+        alert("Nhập đúng email!");
+        $('#Email').focus();
+        return false;
+    }
 
     return true;
 }
