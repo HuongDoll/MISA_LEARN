@@ -54,6 +54,10 @@ $(document).ready(function() {
             if (isEdit) editdata();
             else savedata();
         })
+        // button refresh
+    $('#button-refresh').click(function(){
+        loaddata();
+    })
         // action khi double click vào 1 phần tử trong bảng
     $('table tbody').on('dblclick', 'tr', function() {
             selectid = $(this).attr('recordId');
@@ -78,6 +82,12 @@ $(document).ready(function() {
             deleteItem(selectid);
         }
     })
+    $("#input-filter").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#table-employee tbody tr").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
 
 });
 // function sửa khách hàng
@@ -91,9 +101,9 @@ function editItem(selectid) {
         console.log(result);
         $('#CustomerCode').val(result.CustomerCode);
         $('#FullName').val(result.FullName);
-        $('#Gender').val(result.Gender);
+        if(result.Gender != null) $('input[type="radio"][name="Gender"][value='+result.Gender+']').prop('checked', 'checked');
         $('#Address').val(result.Address);
-        $('#DateOfBirth').val(result.DateOfBirth);
+        $('#DateOfBirth').val(formatDatee(result.DateOfBirth));
         $('#Email').val(result.Email);
         $('#PhoneNumber').val(result.PhoneNumber);
         $('#MemberCardCode').val(result.MemberCardCode);
@@ -135,7 +145,7 @@ function deleteItem(id) {
         url: 'http://api.manhnv.net/api/customers/' + id,
         method: "DELETE"
     }).done(function() {
-        alert("succcc");
+        alert("Xóa khách hàng thành công!");
         loaddata();
     }).fail(function() {
 
@@ -156,12 +166,14 @@ function savedata() {
             loaddata();
             alert("Thêm mới khách hàng thành công!");
         }).fail(function() {
-
+            alert("Có lỗi xảy ra!");
         })
     }
 }
 // validate thông tin nhập vào từ form
 function validateCustomer(customer) {
+    var phonenumber = /^\d{10}$/;
+    var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
     if (customer.CustomerCode == "") {
         alert("Mã khách hàng không được để trống!");
         $('#CustomerCode').focus();
@@ -176,7 +188,19 @@ function validateCustomer(customer) {
         alert("Số điện thoại không được để trống!");
         $('#PhoneNumber').focus();
         return false;
+    }else{
+        if(!customer.PhoneNumber.match(phonenumber)){
+            alert("Nhập đúng số điện thoại!");
+            $('#PhoneNumber').focus();
+            return false;
+        }
     }
+    // if(customer.Email != "" && !customer.Email.match(mailformat)){
+    //     alert("Nhập đúng email!");
+    //     $('#Email').focus();
+    //     return false;
+    // }
+
     return true;
 }
 // lấy thông tin nhập từ form
@@ -184,7 +208,7 @@ function getCustomer() {
     var customer = {
         "CustomerCode": $('#CustomerCode').val(),
         "FullName": $('#FullName').val(),
-        "Gender": $('#Gender').val(),
+        "Gender": $("input[type='radio'][name='Gender']:checked").val(),
         "Address": $('#Address').val(),
         "DateOfBirth": $('#DateOfBirth').val(),
         "Email": $('#Email').val(),
@@ -198,16 +222,34 @@ function getCustomer() {
 }
 // format lại ngày tháng năm sinh
 function formatDate(datee) {
-    var date = new Date(datee);
-    var year = date.getFullYear();
-
-    var month = (1 + date.getMonth()).toString();
-    month = month.length > 1 ? month : '0' + month;
-
-    var day = date.getDate().toString();
-    day = day.length > 1 ? day : '0' + day;
-
-    return month + '/' + day + '/' + year;
+    if(datee != null){
+        var date = new Date(datee);
+        var year = date.getFullYear();
+    
+        var month = (1 + date.getMonth()).toString();
+        month = month.length > 1 ? month : '0' + month;
+    
+        var day = date.getDate().toString();
+        day = day.length > 1 ? day : '0' + day;
+    
+        return day + "/" + month + "/" + year;
+    }else return null;
+    
+}
+function formatDatee(datee) {
+    if(datee != null){
+        var date = new Date(datee);
+        var year = date.getFullYear();
+    
+        var month = (1 + date.getMonth()).toString();
+        month = month.length > 1 ? month : '0' + month;
+    
+        var day = date.getDate().toString();
+        day = day.length > 1 ? day : '0' + day;
+    
+        return year + "-" + month + "-" + day;
+    }else return null;
+    
 }
 // format lại giới tính
 function formatGender(gender) {

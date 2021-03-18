@@ -77,16 +77,22 @@
                 <div class="flex">
                     <div class="find-table flex">
                         <i class="fas fa-search"></i>
-                        <input placeholder="Tìm kiếm theo mã, tên hoặc ố điện thoại...">
+                        <input placeholder="Tìm kiếm theo mã, tên hoặc ố điện thoại..." id="input-filter">
                     </div>
 
                     <select class="box-form-select">
                         <option>Tất cả phòng ban</option>
+                        <option>Tất cả phòng ban</option>
+                        <option>Tất cả phòng ban</option>
+                        <option>Tất cả phòng ban</option>
                     </select>
                     <select class="box-form-select">
                         <option>Tất cả vị trí</option>
+                        <option>Tất cả vị trí</option>
+                        <option>Tất cả vị trí</option>
+                        <option>Tất cả vị trí</option>
                     </select>
-                    <button type="button" class="button-refresh"> 
+                    <button type="button" class="button-refresh" id="button-refresh"> 
                         <img src="content/icon/refresh.png">
                     </button>
                 </div>
@@ -110,6 +116,21 @@
                     </table>
                 </div>
 
+            </div>
+            <!-- phân trang -->
+            <div class="flex">
+                <div class="botton-page-left">hiển thị 1-10/1000 khách hàng</div>
+                <div class="botton-page-center flex">
+                    <button type="button"><i class="fas fa-angle-double-left"></i></button>
+                    <button type="button"><i class="fas fa-angle-left"></i></button>
+                    <button type="button">1</button>
+                    <button type="button">2</button>
+                    <button type="button">3</button>
+                    <button type="button">4</button>
+                    <button type="button"><i class="fas fa-angle-right"></i></button>
+                    <button type="button"><i class="fas fa-angle-double-right"></i></button>
+                </div>
+                <div class="botton-page-right">10 nhân viên/trang</div>
             </div>
         </div>
     </div>
@@ -145,7 +166,7 @@
                         <div class="group-input">
                             <div class="group wight-1-2">
                                 <label>Mã thẻ thành viên</label>
-                                <input type="text" id="CustomerCode">
+                                <input type="text" id="MemberCardCode">
                             </div>
                             <div class="group wight-1-2">
                                 <label>Nhóm khách hàng</label>
@@ -156,25 +177,27 @@
 
                             </div>
                         </div>
+                        
                         <div class="group-input">
                             <div class="group wight-1-2">
                                 <label>Ngày sinh</label>
-                                <input type="date" id="DateOfBirth" name="DateOfBirth">
+                                <input type="date" id="DateOfBirth" name="DateOfBirth" value="2021-03-09">
+                                <!-- <input type="date" id="DateOfBirth" name="DateOfBirth" value="2021-03-09"> -->
                             </div>
                             <div class=" group-sex wight-1-2">
                                 <div>Giới tính</div>
                                 <span class="radio-sex"> 
-                                    <input type="radio" id="Gender" name="Gender" value=1>
+                                    <input type="radio" id="male" name="Gender" value='1'>
                                     <label for="male">Nam</label>
                                     
                                 </span>
                                 <span class="radio-sex">
-                                    <input type="radio" id="Gender" name="Gender" value=2>
+                                    <input type="radio" id="female" name="Gender" value='2'>
                                     <label for="female">Nữ</label> 
                                     
                                 </span>
                                 <span class="radio-sex"> 
-                                    <input type="radio" id="Gender" name="Gender" value=0 checked>
+                                    <input type="radio" id="other" name="Gender" value='0' checked>
                                     <label for="other">Khác</label>
                                     
                                 </span>
@@ -228,6 +251,7 @@
         <button type="button" id="button-edit"><i class="fas fa-edit"></i></button>
         <button type="button" id="button-delete-item"><i class="far fa-trash-alt"></i></button>
     </div>
+    
     <script src="./js/jquery-3.6.0.min.js"></script>
     <script src="./js/main.js"></script>
 </body>
