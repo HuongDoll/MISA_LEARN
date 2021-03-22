@@ -165,8 +165,9 @@ function savedata() {
             $('#dialog-child').hide();
             loaddata();
             alert("Thêm mới khách hàng thành công!");
-        }).fail(function() {
+        }).fail(function(error) {
             alert("Có lỗi xảy ra!");
+            console.log(error);
         })
     }
 }
