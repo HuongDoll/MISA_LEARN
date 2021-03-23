@@ -1,29 +1,23 @@
 <template>
   <div id="app">
     <Menu/>
+    <Content/>
   </div>
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
-import Menu from './components/Menu.vue'
+import Menu from './components/layout/Menu'
+import Content from './components/layout/Content'
 
 export default {
   name: 'App',
   components: {
-    // HelloWorld,
-    Menu
+    Menu,
+    Content
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+@import './css/font.css';
 </style>

@@ -1,32 +1,32 @@
 <template>
   <div  class="menu">
     <div class="image-menu">
-        <img class="image-menu-icon" src="./assets/content/image/toggle.png">
-        <img class="image-menu-logo" src="./assets/content/image/cukcuk-logo.png">
+        <img class="image-menu-icon" src="../../assets/content/image/toggle.png">
+        <img class="image-menu-logo" src="../../assets/content/image/cukcuk-logo.png">
     </div>
 
     <div class="menu-option">
-        <span><img src="/assets/content/icon/dashboard.png"></span>
+        <span><img src="../../assets/content/icon/dashboard.png"></span>
         <span>Tổng quan</span>
     </div>
     <div class="menu-option">
-        <span><img src="/assets/content/icon/report.png"></span>
+        <span><img src="../../assets/content/icon/report.png"></span>
         <span>Báo cáo</span>
     </div>
     <div class="menu-option">
-        <span><img src="/assets/content/icon/dashboard.png"></span>
+        <span><img src="../../assets/content/icon/dashboard.png"></span>
         <span>Mua hàng</span>
     </div>
-    <div class="menu-option">
-        <span><img src="/assets/content/icon/dic-employee.png"></span>
+    <router-link to="/foo" class="menu-option">
+        <span><img src="../../assets/content/icon/dic-employee.png"></span>
+        <span>Danh mục khách hàng</span>
+    </router-link>
+    <router-link to="/bar" class="menu-option">
+        <span><img src="../../assets/content/icon/dic-employee.png"></span>
         <span>Danh mục nhân viên</span>
-    </div>
+    </router-link>
     <div class="menu-option">
-        <span><img src="/assets/content/icon/dic-employee.png"></span>
-        <span>Danh mục nhân viên</span>
-    </div>
-    <div class="menu-option">
-        <span><img src="/assets/content/icon/setting.png"></span>
+        <span><img src="../../assets/content/icon/setting.png"></span>
         <span>Thiết lập hệ thống</span>
     </div>
   </div>
@@ -55,6 +55,7 @@ export default {
 .menu{
     background-color: aquamarine;
     width: 220px;
+    height: calc(100vh - 16px);
 }
 /* menu chính */
 .image-menu{
