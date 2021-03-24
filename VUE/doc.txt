@@ -1,6 +1,0 @@
-//cài vue
-npm install -g @vue/cli
-//tạo mới 1 project vue
-vue create [name] -d
-//chạy serve 
-npm run serve
