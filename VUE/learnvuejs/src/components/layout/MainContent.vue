@@ -1,13 +1,21 @@
 <template>
-  <div class="content">
-    <div>content</div>
-    <router-view></router-view>
+  <div class="maincontent">
+    <!-- <router-view></router-view> -->
+    <Filter-content/>
+    <MISATable/>
   </div>
 </template>
 
 <script>
+import FilterContent from './FilterContent'
+import MISATable from '../base/MISATable'
+
 export default {
   name: 'Content',
+  components: {
+    FilterContent,
+    MISATable
+  },
   props: {
     msg: String
   },
@@ -25,9 +33,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.content{
-    background-color: khaki;
-    padding: 8px;
-    width: calc(100% - 16px);;
+.maincontent{
+    background-color:darkorchid;
+    width: 100%;
 }
 </style>

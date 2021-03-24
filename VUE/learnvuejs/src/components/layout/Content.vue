@@ -33,7 +33,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .content{
-    background-color: cadetblue;
+    background-color: darkgoldenrod;
     width: calc(100% - 220px);
 }
 </style>

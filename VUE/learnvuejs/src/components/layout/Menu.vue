@@ -17,14 +17,22 @@
         <span><img src="../../assets/content/icon/dashboard.png"></span>
         <span>Mua hàng</span>
     </div>
-    <router-link to="/foo" class="menu-option">
+    <!-- <router-link to="/foo" class="menu-option">
         <span><img src="../../assets/content/icon/dic-employee.png"></span>
         <span>Danh mục khách hàng</span>
     </router-link>
     <router-link to="/bar" class="menu-option">
         <span><img src="../../assets/content/icon/dic-employee.png"></span>
         <span>Danh mục nhân viên</span>
-    </router-link>
+    </router-link> -->
+    <div class="menu-option">
+        <span><img src="../../assets/content/icon/dic-employee.png"></span>
+        <span>Danh mục khách hàng</span>
+    </div>
+    <div class="menu-option">
+        <span><img src="../../assets/content/icon/dic-employee.png"></span>
+        <span>Danh mục nhân viên</span>
+    </div>
     <div class="menu-option">
         <span><img src="../../assets/content/icon/setting.png"></span>
         <span>Thiết lập hệ thống</span>
