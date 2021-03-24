@@ -1,0 +1,10 @@
+Convention:
+	- Tên trường: có dấu _ trước, chữ đầu tiên viết thường
+	- Thuộc tính viết hoa chữ cái đầu tiên 
+	- Phương thức viết hoa chữ cái đầu
+	- Hằng số viết hoa tất cả
+Static: 
+	- Sử dụng cho lớp, đối tượng k sử dụng được 
+Generic:
+	- Viết code ngắn hơn
+	- Là kiểu dữ liệu chưa xác định <T>
