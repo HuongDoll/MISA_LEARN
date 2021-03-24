@@ -1,31 +1,39 @@
 <template>
   <div class="maincontent">
     <!-- <router-view></router-view> -->
-    <Filter-content/>
+    <Filter-content @opendialog="opendialog" />
     <MISATable/>
+    <CustomerDetail :isShowDialog =isShowDialog v-show="isShowDialog" @closedialog="clodedialog"/>
   </div>
 </template>
 
 <script>
 import FilterContent from './FilterContent'
 import MISATable from '../base/MISATable'
+import CustomerDetail from '../page/customer/CustomerDetail'
 
 export default {
   name: 'Content',
   components: {
     FilterContent,
-    MISATable
+    MISATable,
+    CustomerDetail
   },
   props: {
     msg: String
   },
   data(){
     return{
-      name: ''
+      isShowDialog: false,
     }
   },
   methods:{
-
+    clodedialog(){
+      this.isShowDialog = false;
+    },
+    opendialog(){
+      this.isShowDialog = true;
+    }
   }
 }
 
@@ -34,7 +42,6 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .maincontent{
-    background-color:darkorchid;
     width: 100%;
 }
 </style>

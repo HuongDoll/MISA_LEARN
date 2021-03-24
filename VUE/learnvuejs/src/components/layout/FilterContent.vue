@@ -3,10 +3,10 @@
       <div class="flex content-title">
                     <span class="title-content">Danh sách khách hàng</span>
                     <span>
-                        <button type="button" class="button-add-eml" id="add-employee">
+                        <button type="button" class="button-add-eml" id="add-employee" @click="opendialog">
                             <span><img src="../../assets/content/icon/add.png"></span>
-                    <span>Thêm khách hàng</span>
-                    </button>
+                            <span>Thêm khách hàng</span>
+                        </button>
                     </span>
                 </div>
                 <!-- filter của danh sách khách hàng -->
@@ -48,7 +48,9 @@ export default {
     }
   },
   methods:{
-
+      opendialog(){
+          this.$emit('opendialog');
+      }
   }
 }
 
@@ -58,7 +60,6 @@ export default {
 <style scoped>
  /* tilte */
  .filter{
-     background-color: darkturquoise;
      width: 100%;
  }
 .content-title{

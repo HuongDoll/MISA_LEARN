@@ -2,21 +2,9 @@
   <div class="table-eml">
         <table id="table-employee">
             <thead>
-                <td class="wight-2">Mã khách hàng</td>
-                <td class="wight-2"> Họ và tên</td>
-                <td class="wight-1">Giới tính</td>
-                <td class="wight-2">Ngày sinh </td>
-                <td class="wight-2">Nhóm ngành hàng</td>
-                <td class="wight-1">Điện thoại</td>
-                <td class="wight-2">Email</td>
-                <td class="wight-3">Địa chỉ</td>
-                <td class="wight-1">Mã thẻ thành viên</td>
-            </thead>
-            <tbody>
-                <!-- truyền vào dữ liệu thông tin khách hàng  -->
-                <tr v-for="(data, index) in dataList" :key="index">
+                <tr>
                     <td class="wight-2">Mã khách hàng</td>
-                    <td class="wight-2"> Họ và tên</td>
+                    <td class="wight-2">Họ và tên</td>
                     <td class="wight-1">Giới tính</td>
                     <td class="wight-2">Ngày sinh </td>
                     <td class="wight-2">Nhóm ngành hàng</td>
@@ -24,6 +12,21 @@
                     <td class="wight-2">Email</td>
                     <td class="wight-3">Địa chỉ</td>
                     <td class="wight-1">Mã thẻ thành viên</td>
+                </tr>
+                
+            </thead>
+            <tbody>
+                <!-- truyền vào dữ liệu thông tin khách hàng  -->
+                <tr v-for="(data, index) in dataList" :key="index">
+                    <td class="wight-2">{{data.CustomerCode}}</td>
+                    <td class="wight-2">{{data.FullName}}</td>
+                    <td class="wight-1">{{formatGender(data.Gender)}}</td>
+                    <td class="wight-2">{{formatDate(data.DateOfBirth)}} </td>
+                    <td class="wight-2">{{data.CustomerGroupName}}</td>
+                    <td class="wight-1">{{data.PhoneNumber}}</td>
+                    <td class="wight-2">{{data.Email}}</td>
+                    <td class="wight-3">{{data.Address}}</td>
+                    <td class="wight-1">{{data.MemberCardCode}}</td>
                 </tr>
             </tbody>
         </table>
@@ -34,32 +37,71 @@
 import axios from 'axios'
 
 export default {
-  name: 'MISATable',
-  created(){
-    this.loadData();
-  },
-  props: {
-    msg: String
-  },
-  data(){
-    return{
-      dataList: [],
+    name: 'MISATable',
+    created(){
+        this.loadData();
+    },
+    props: {
+        msg: String
+    },
+    data(){
+        return{
+        dataList: [],
+        }
+    },
+    methods:{
+        loadData(){
+            axios.get('http://api.manhnv.net/api/customers')
+            .then(response => {
+                console.log(response)
+                this.dataList =response.data;
+            })
+            .catch(error => {
+                console.log(error)
+                this.errored = true
+            })
+            .finally(() => this.loading = false)
+        },
+        formatDate(datee) {
+            if(datee != null){
+                var date = new Date(datee);
+                var year = date.getFullYear();
+            
+                var month = (1 + date.getMonth()).toString();
+                month = month.length > 1 ? month : '0' + month;
+            
+                var day = date.getDate().toString();
+                day = day.length > 1 ? day : '0' + day;
+            
+                return day + "/" + month + "/" + year;
+            }else return null;
+            
+        },
+
+        formatDatee(datee) {
+            if(datee != null){
+                var date = new Date(datee);
+                var year = date.getFullYear();
+            
+                var month = (1 + date.getMonth()).toString();
+                month = month.length > 1 ? month : '0' + month;
+            
+                var day = date.getDate().toString();
+                day = day.length > 1 ? day : '0' + day;
+            
+                return year + "-" + month + "-" + day;
+            }else return null;
+            
+        },
+        // format lại giới tính
+        formatGender(gender) {
+            if (gender == 1) return "Nam";
+            else {
+                if (gender == 2) return "Nữ";
+                else return "Khác";
+            }
+        }
     }
-  },
-  methods:{
-    loadData(){
-        axios.get('http://api.manhnv.net/api/customers')
-        .then(response => {
-            console.log(response)
-        this.dataList =response
-        })
-        .catch(error => {
-            console.log(error)
-            this.errored = true
-        })
-        .finally(() => this.loading = false)
-    }
-  }
 }
 
 </script>
@@ -72,14 +114,18 @@ table{
 .table-eml{
     width: 100%;
     overflow-x: auto;
-    background-color: burlywood;
 }
 .table-eml tr {
     border-bottom: 1px solid rgb(179, 175, 175);
     display: block;
     padding: 12px;
 }
-.table-eml tr:hover{
+.table-eml thead tr {
+    border-bottom: 1px solid black;
+    display: block;
+    padding: 12px;
+}
+.table-eml tbody tr:hover{
     background-color: whitesmoke;
 }
 .table-eml thead{

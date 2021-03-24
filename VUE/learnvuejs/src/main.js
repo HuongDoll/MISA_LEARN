@@ -4,7 +4,8 @@ import App from './App.vue'
 import VueRouter from 'vue-router'
 import CustomerList from './components/page/customer/CustomerList.vue'
 import EmployeeList from './components/page/employee/EmployeeList.vue'
-
+import '@fortawesome/fontawesome-free/css/all.css'
+import '@fortawesome/fontawesome-free/js/all.js'
 
 Vue.config.productionTip = false
 Vue.use(VueRouter)

@@ -41,7 +41,6 @@ export default {
     padding: 8px;
     display: flex;
     width: calc(100% - 16px);
-    background-color: brown;
 }
 .header select{
     vertical-align :middle;

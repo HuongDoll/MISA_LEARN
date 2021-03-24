@@ -61,7 +61,6 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .menu{
-    background-color: aquamarine;
     width: 220px;
     height: calc(100vh - 16px);
 }
@@ -69,6 +68,7 @@ export default {
 .image-menu{
     width: 100%;
     height: 50px;
+    padding: 8px;
 }
 .image-menu-icon{
     width: 25px;

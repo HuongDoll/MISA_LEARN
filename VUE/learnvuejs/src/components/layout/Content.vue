@@ -2,18 +2,21 @@
   <div class="content">
     <HeaderContent/>
     <MainContent/>
+    <Footer/>
   </div>
 </template>
 
 <script>
 import HeaderContent from './HeaderContent'
 import MainContent from './MainContent'
+import Footer from './Footer'
 
 export default {
   name: 'Content',
   components: {
     HeaderContent,
-    MainContent
+    MainContent,
+    Footer
   },
   props: {
     msg: String
@@ -33,7 +36,6 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .content{
-    background-color: darkgoldenrod;
     width: calc(100% - 220px);
 }
 </style>
