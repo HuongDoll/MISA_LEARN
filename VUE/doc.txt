@@ -3,6 +3,10 @@ npm install -g @vue/cli
 //tạo mới 1 project vue
 vue create [name] -d
 //chạy serve 
+<<<<<<< HEAD
 npm run serve
 //cài vue router
 npm install vue-router
+=======
+npm run serve
+>>>>>>> ee53b4ba57e26e221eabea266cf17044d46f2212
