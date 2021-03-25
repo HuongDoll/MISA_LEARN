@@ -25,6 +25,8 @@ namespace MISA.Cukcuk.WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //cors
+            services.AddCors();
             services.AddControllers();
         }
 
@@ -35,6 +37,10 @@ namespace MISA.Cukcuk.WebApi
             {
                 app.UseDeveloperExceptionPage();
             }
+            //cors
+
+            app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader().SetPreflightMaxAge(TimeSpan.FromMinutes(10))
+                );
 
             app.UseHttpsRedirection();
 
@@ -46,6 +52,7 @@ namespace MISA.Cukcuk.WebApi
             {
                 endpoints.MapControllers();
             });
+
         }
     }
 }

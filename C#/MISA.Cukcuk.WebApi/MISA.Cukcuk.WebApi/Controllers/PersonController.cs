@@ -16,32 +16,32 @@ namespace MISA.Cukcuk.WebApi.Controllers
         {
             new Person()
             {
-                CustomerId = new Guid(),
-                CustomerCode = "KH0000012368",
+                CustomerId = Guid.NewGuid(),
+                CustomerCode = "KH11091999",
                 FullName = "Huong Doll",
-                Gender = 0,
+                Gender = 1,
                 Address = "Hà Nội",
-                DateOfBirth = new DateTime(2021-03-11),
-                Email = "manh@yahooh",
-                PhoneNumber = "18001234111",
+                DateOfBirth = DateTime.Now,
+                Email = "huongdoll@gmail.com",
+                PhoneNumber = "0973843806",
                 CustomerGroupId = new Guid(),
                 DebitAmount = 0,
                 MemberCardCode = "",
                 CompanyName = "MISA",
                 CompanyTaxCode = "",
                 IsStopFollow = false,
-                CustomerGroupName = "Khách vãng lai",
+                CustomerGroupName = "Khách VIP",
                 GenderName = "Nữ",
                 MISAEntityState = 0
             },
             new Person()
             {
-                CustomerId = new Guid(),
+                CustomerId = Guid.NewGuid(),
                 CustomerCode = "KH000001236822",
                 FullName = "Huong Doll 2",
-                Gender = 0,
+                Gender = 2,
                 Address = "Hà Nội",
-                DateOfBirth = new DateTime(2021-03-11),
+                DateOfBirth = DateTime.Parse("2021-03-11"),
                 Email = "manh@yahaaooh",
                 PhoneNumber = "18001234111",
                 CustomerGroupId = new Guid(),
@@ -56,12 +56,12 @@ namespace MISA.Cukcuk.WebApi.Controllers
             },
             new Person()
             {
-                CustomerId = new Guid(),
+                CustomerId = Guid.NewGuid(),
                 CustomerCode = "KH0000012368",
                 FullName = "Huong Doll 3",
                 Gender = 0,
                 Address = "Thais Binhf",
-                DateOfBirth = new DateTime(2021-03-11),
+                DateOfBirth = DateTime.Parse("2021-03-11"),
                 Email = "manh@yahooh",
                 PhoneNumber = "18001234111",
                 CustomerGroupId = new Guid(),
@@ -76,12 +76,12 @@ namespace MISA.Cukcuk.WebApi.Controllers
             },
             new Person()
             {
-                CustomerId = new Guid(),
+                CustomerId = Guid.NewGuid(),
                 CustomerCode = "KH0000012368",
                 FullName = "Huong Doll 4",
                 Gender = 0,
                 Address = "Thanh Hoas",
-                DateOfBirth = new DateTime(2021-03-11),
+                DateOfBirth = DateTime.Parse("2021-03-11"),
                 Email = "manh@yahooh",
                 PhoneNumber = "18001234111",
                 CustomerGroupId = new Guid(),
@@ -96,12 +96,12 @@ namespace MISA.Cukcuk.WebApi.Controllers
             },
             new Person()
             {
-                CustomerId = new Guid(),
+                CustomerId = Guid.NewGuid(),
                 CustomerCode = "KH0000012368",
                 FullName = "Huong Doll 5",
                 Gender = 0,
                 Address = "bachs khoa",
-                DateOfBirth = new DateTime(2021-03-11),
+                DateOfBirth = DateTime.Parse("2021-03-11"),
                 Email = "manh@yahooh",
                 PhoneNumber = "18001234111",
                 CustomerGroupId = new Guid(),
@@ -121,7 +121,6 @@ namespace MISA.Cukcuk.WebApi.Controllers
 
         }
 
-        [Route("GET")]
         [HttpGet]
 
         public List<Person> GetPeople()
@@ -135,7 +134,24 @@ namespace MISA.Cukcuk.WebApi.Controllers
         /// <returns></returns>
         /// create by huongdoll 24.03.2021
         /// modified by huongdoll
-        [Route("insert")]
+
+        [HttpGet("{customerId}")]
+        public Person GetPetsonByID([FromRoute] string CustomerId)
+        {
+            Guid.TryParse(CustomerId, out Guid idPerson);
+            if (idPerson == null)
+            {
+                return null;
+            }
+
+            var personFind = Persons.Where(p => p.CustomerId == idPerson).FirstOrDefault();
+            if (personFind == null)
+            {
+                return null;
+            }
+            return personFind;
+        }
+
         [HttpPost]
         public string InsertPeople(Person person)
         {
@@ -143,6 +159,8 @@ namespace MISA.Cukcuk.WebApi.Controllers
             {
                 if (person != null)
                 {
+                    Guid personID = Guid.NewGuid();
+                    person.CustomerId = personID;
                     Persons.Add(person);
                 }
             }
@@ -154,9 +172,8 @@ namespace MISA.Cukcuk.WebApi.Controllers
             return "success";
         }
 
-        [Route("update/{CustomerId}")]
-        [HttpPut]
-        public string UpdatePeople([FromRoute] string CustomerId, [FromBody] Person person)
+        [HttpPut("{customerId}")]
+        public string Put([FromRoute] string CustomerId, [FromBody] Person person)
         {
             try
             {

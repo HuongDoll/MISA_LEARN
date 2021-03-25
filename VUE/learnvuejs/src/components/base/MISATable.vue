@@ -18,15 +18,15 @@
             <tbody>
                 <!-- truyền vào dữ liệu thông tin khách hàng  -->
                 <tr v-for="(data, index) in dataList" :key="index">
-                    <td class="wight-2">{{data.CustomerCode}}</td>
-                    <td class="wight-2">{{data.FullName}}</td>
-                    <td class="wight-1">{{formatGender(data.Gender)}}</td>
-                    <td class="wight-2">{{formatDate(data.DateOfBirth)}} </td>
-                    <td class="wight-2">{{data.CustomerGroupName}}</td>
-                    <td class="wight-1">{{data.PhoneNumber}}</td>
-                    <td class="wight-2">{{data.Email}}</td>
-                    <td class="wight-3">{{data.Address}}</td>
-                    <td class="wight-1">{{data.MemberCardCode}}</td>
+                    <td class="wight-2">{{data.customerCode}}</td>
+                    <td class="wight-2">{{data.fullName}}</td>
+                    <td class="wight-1">{{formatGender(data.gender)}}</td>
+                    <td class="wight-2">{{formatDate(data.dateOfBirth)}} </td>
+                    <td class="wight-2">{{data.customerGroupName}}</td>
+                    <td class="wight-1">{{data.phoneNumber}}</td>
+                    <td class="wight-2">{{data.email}}</td>
+                    <td class="wight-3">{{data.address}}</td>
+                    <td class="wight-1">{{data.memberCardCode}}</td>
                 </tr>
             </tbody>
         </table>
@@ -42,19 +42,25 @@ export default {
         this.loadData();
     },
     props: {
-        msg: String
+        isLoad: Boolean
     },
     data(){
         return{
         dataList: [],
         }
     },
+    watch: {
+        isLoad: function() {
+            if(this.isLoad) this.loadData();
+        }
+    },
     methods:{
         loadData(){
-            axios.get('http://api.manhnv.net/api/customers')
+            axios.get('https://localhost:44312/api/person')
             .then(response => {
                 console.log(response)
                 this.dataList =response.data;
+                this.$emit('LoadDone');
             })
             .catch(error => {
                 console.log(error)
@@ -113,6 +119,7 @@ table{
 }
 .table-eml{
     width: 100%;
+    height: calc(100vh - 220px);
     overflow-x: auto;
 }
 .table-eml tr {

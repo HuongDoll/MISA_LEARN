@@ -10,7 +10,7 @@ import Menu from './components/layout/Menu'
 import Content from './components/layout/Content'
 
 export default {
-  name: 'App',
+  name: 'MISACukCuk',
   components: {
     Menu,
     Content
