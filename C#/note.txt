@@ -8,3 +8,8 @@ Static:
 Generic:
 	- Viết code ngắn hơn
 	- Là kiểu dữ liệu chưa xác định <T>
+------------------------------------------------------------
+KISS 
+GET PUT POST DELETE
+Paging 
+STATUS CODE 
