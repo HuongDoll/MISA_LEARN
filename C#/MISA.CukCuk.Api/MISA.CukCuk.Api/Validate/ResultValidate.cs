@@ -16,5 +16,7 @@ namespace MISA.CukCuk.Api
         public string ValidateInfoDev { get; set; }
         public ErrorCode ErrorCode { get; set; }
         public bool IsValidate { get; set; }
+
+        public Guid IdDuplicate { get; set; }
     }
 }

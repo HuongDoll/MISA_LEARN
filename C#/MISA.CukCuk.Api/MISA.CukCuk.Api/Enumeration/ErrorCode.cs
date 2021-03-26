@@ -11,6 +11,7 @@ namespace MISA.CukCuk.Api.Enumeration
         ERR = 999,
         DUPLICATE = 2,
         NOTFOUND = 4,
+        ERROR_DATA = 6,
     }
      public enum Gender
     {

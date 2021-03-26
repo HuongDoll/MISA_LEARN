@@ -36,7 +36,7 @@
                     v-bind:class="{ warning: !validates.FullName }"
                     type="text"
                     id="FullName"
-                    v-model="customer.FullName"
+                    v-model="customer.fullName"
                   />
                 </div>
               </div>
@@ -201,7 +201,7 @@ export default {
         customerGroupName: "Nhóm khách hàng MISA",
         dateOfBirth: null,
         email: "",
-        FullName: "",
+        fullName: "",
         gender: 0,
         memberCardCode: "",
         phoneNumber: "",
@@ -226,12 +226,12 @@ export default {
       this.customer.gender = 0;
       this.customer.memberCardCode = "";
       this.customer.phoneNumber = "";
-      this.customer.dateOfBirth = "";
+      this.customer.dateOfBirth = null;
       this.customer.customerCode = "";
-      this.validates.customerCode = true;
-      this.validates.fullName = true;
-      this.validates.email = true;
-      this.validates.phoneNumber = true;
+      this.validates.CustomerCode = true;
+      this.validates.FullName = true;
+      this.validates.Email = true;
+      this.validates.PhoneNumber = true;
     },
     save() {
       var vm = this;
@@ -265,7 +265,7 @@ export default {
       } else {
         this.validates.CustomerCode = true;
       }
-      if (this.customer.FullName == "") {
+      if (this.customer.fullName == "") {
         this.validates.FullName = false;
         return false;
       } else {

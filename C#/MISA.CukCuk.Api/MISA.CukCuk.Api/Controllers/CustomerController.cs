@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MISA.CukCuk.Api.Enumeration;
 using MISA.CukCuk.Api.Model;
 using MISA.CukCuk.Api.Result;
 using System;
@@ -80,22 +81,58 @@ namespace MISA.CukCuk.Api.Controllers
 
         // PUT api/<CustomerController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public ResponeResult Put([FromRoute] string id, [FromBody] Customer customer)
         {
+            var res = new ResponeResult();
+            Guid.TryParse(id, out Guid customerId);
+            if (customerId != null && customerId != Guid.Empty)
+            {
+                try
+                {
+                    res = DbContext.UpdateCustomer(customerId, customer);
+                }
+                catch (Exception ex)
+                {
+                    res.OnException(res, ex);
+                    //log
+                }
+            }
+            else
+            {
+                res.IsSuccess = false;
+                res.UserMsg = Resource.Message.ExceptionUser;
+                res.DevMsg = Resource.Message.ExceptionUser;
+            }
+            
+            return res;
         }
 
         // DELETE api/<CustomerController>/5
         [HttpDelete("{id}")]
-        public ResponeResult Delete([FromRoute] int id)
+        public ResponeResult Delete([FromRoute] string id)
         {
             var res = new ResponeResult();
             try
             {
-                res = DbContext.DeleteCustomer(id);
+                Guid.TryParse(id, out Guid customerId);
+                if (customerId != null && customerId != Guid.Empty)
+                {
+                    res = DbContext.DeleteCustomer(customerId);
+                    if (res.ErrorCode != ErrorCode.NONE)
+                    {
+                        res.IsSuccess = false;
+                    }
+                }
+                else
+                {
+                    res.IsSuccess = false;
+                    res.UserMsg = Resource.Message.ExceptionUser;
+                    res.DevMsg = Resource.Message.ExceptionUser;
+                }
             }
             catch (Exception ex)
             {
-                res.OnException(res, ex);
+                res.OnBadRequest(res);
                 //log
             }
             return res;

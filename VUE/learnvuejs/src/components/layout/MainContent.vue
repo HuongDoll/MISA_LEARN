@@ -2,9 +2,9 @@
   <div class="maincontent">
     <!-- <router-view></router-view> -->
     <Filter-content @opendialog="opendialogput" />
-    <MISATable :isLoad =isLoadDataTable @LoadDone="loadDone"/>
+    <MISATable :isLoad =isLoadDataTable @LoadDone="loadDone" @doubleClick="doubleClick" />
     <CustomerDetail :msg =msg v-show="isShowDialog" @closedialog="clodedialog" @reload="loadtable" />
-    <CustomerDialog v-show="isShowDialogMini" @closedialog="closeDialogMini" />
+    <CustomerDialog v-show="isShowDialogMini" :location=location @closedialog="closeDialogMini" />
   </div>
 </template>
 
@@ -28,12 +28,22 @@ export default {
     return{
       isShowDialog: false,
       isLoadDataTable: false,
-      isShowDialogMini: true,
+      isShowDialogMini: false,
       msg: "",
+      location : {
+        x : 100,
+        y : 100
+      }
     }
   },
   
   methods:{
+    doubleClick(x, y ,customerId){
+      this.isShowDialogMini = true;
+      this.location.x = x;
+      this.location.y = y;
+      console.log(customerId);
+    },
     closeDialogMini(){
       this.isShowDialogMini = false;
     },

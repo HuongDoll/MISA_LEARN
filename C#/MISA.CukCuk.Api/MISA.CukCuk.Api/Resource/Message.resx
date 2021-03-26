@@ -120,13 +120,22 @@
   <data name="AddCustomerSuccess" xml:space="preserve">
     <value>Thêm người dùng thành công!</value>
   </data>
+  <data name="ErrorData" xml:space="preserve">
+    <value>Lỗi dữ liệu nhập vào</value>
+  </data>
   <data name="ExceptionDuplicate" xml:space="preserve">
-    <value>duplicate</value>
+    <value>Đã tồn tại</value>
   </data>
   <data name="ExceptionUser" xml:space="preserve">
     <value>Đã có lỗi xảy ra</value>
   </data>
   <data name="ExceptionValidateQuery" xml:space="preserve">
     <value>Lỗi không truyền tham số</value>
+  </data>
+  <data name="NotFound" xml:space="preserve">
+    <value>Không tìm thấy người dùng</value>
+  </data>
+  <data name="RemoveSuccess" xml:space="preserve">
+    <value>Xóa người dùng thành công</value>
   </data>
 </root>

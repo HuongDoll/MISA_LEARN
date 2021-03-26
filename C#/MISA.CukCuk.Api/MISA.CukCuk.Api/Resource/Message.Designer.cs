@@ -70,6 +70,15 @@ namespace MISA.CukCuk.Api.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Lỗi dữ liệu nhập vào.
+        /// </summary>
+        public static string ErrorData {
+            get {
+                return ResourceManager.GetString("ErrorData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Đã tồn tại.
         /// </summary>
         public static string ExceptionDuplicate {

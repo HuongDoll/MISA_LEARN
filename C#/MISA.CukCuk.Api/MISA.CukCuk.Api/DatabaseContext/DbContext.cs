@@ -53,7 +53,7 @@ namespace MISA.CukCuk.Api
             }
             else
             {
-                res.isSuccess = false;
+                res.IsSuccess = false;
                 res.Data = "";
             }
 
@@ -78,7 +78,8 @@ namespace MISA.CukCuk.Api
             {
 
                 var findCustomer = Customers
-                    .Where(c => c.CustomerCode == customer.CustomerCode).FirstOrDefault();
+                    .Where(c => c.CustomerCode == customer.CustomerCode)
+                     .FirstOrDefault();
 
                 if(findCustomer == null)
                 {
@@ -99,13 +100,30 @@ namespace MISA.CukCuk.Api
             return res;
         }
 
-        public static int UpdateCustomer(Customer customer)
+        public static ResponeResult UpdateCustomer(Guid customerID, Customer customer)
         {
-            return 0;
+            
         }
-        public static int DeleteCustomer(Customer customer)
+        public static ResponeResult DeleteCustomer(Guid customerID)
         {
-            return 0;
+            var res = new ResponeResult();
+            var findCustomer = Customers
+                    .Where(c => c.CustomerID == customerID)
+                     .FirstOrDefault();
+            if (findCustomer == null)
+            {
+                //ko tim thay nguoi dung
+                res.ErrorCode = ErrorCode.NOTFOUND;
+                res.UserMsg = Resource.Message.NotFound;
+                res.DevMsg = Resource.Message.NotFound;
+            }
+            else
+            {
+                Customers.Remove(findCustomer);
+                res.UserMsg = Resource.Message.RemoveSuccess;
+                res.DevMsg = Resource.Message.RemoveSuccess;
+            }
+            return res;
         }
     }
 }
