@@ -17,7 +17,7 @@
             </thead>
             <tbody>
                 <!-- truyền vào dữ liệu thông tin khách hàng  -->
-                <tr v-for="(data, index) in dataList" :key="index">
+                <tr v-for="(data, index) in dataList" :key="index" @click="clickrow($event, data.customerId)">
                     <td class="wight-2">{{data.customerCode}}</td>
                     <td class="wight-2">{{data.fullName}}</td>
                     <td class="wight-1">{{formatGender(data.gender)}}</td>
@@ -55,6 +55,11 @@ export default {
         }
     },
     methods:{
+        clickrow(event, customerId){
+            console.log(event.screenX);
+            console.log(event.screenY);
+            console.log(customerId);
+        },
         loadData(){
             axios.get('https://localhost:44312/api/person')
             .then(response => {
