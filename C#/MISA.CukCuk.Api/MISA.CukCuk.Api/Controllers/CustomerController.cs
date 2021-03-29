@@ -89,7 +89,7 @@ namespace MISA.CukCuk.Api.Controllers
             {
                 try
                 {
-                    res = DbContext.UpdateCustomer(customerId, customer);
+                    //res = DbContext.UpdateCustomer(customerId, customer);
                 }
                 catch (Exception ex)
                 {

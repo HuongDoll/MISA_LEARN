@@ -25,7 +25,9 @@ namespace MISA.CukCuk.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors();
             services.AddControllers();
+            services.AddScoped(typeof(IDatabaseService<>), typeof(MySqlDatabaseService<>));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -35,6 +37,8 @@ namespace MISA.CukCuk.Api
             {
                 app.UseDeveloperExceptionPage();
             }
+            //cors
+            app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader().SetPreflightMaxAge(TimeSpan.FromMinutes(10)));
 
             app.UseHttpsRedirection();
 

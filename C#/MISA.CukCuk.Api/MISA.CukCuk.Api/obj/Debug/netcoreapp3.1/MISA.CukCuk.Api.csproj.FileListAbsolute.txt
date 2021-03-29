@@ -42,3 +42,12 @@ C:\Users\hthuong\source\MISA_LEARN\C#\MISA.CukCuk.Api\MISA.CukCuk.Api\obj\Debug\
 C:\Users\hthuong\source\MISA_LEARN\C#\MISA.CukCuk.Api\MISA.CukCuk.Api\obj\Debug\netcoreapp3.1\scopedcss\bundle\MISA.CukCuk.Api.styles.css
 C:\Users\hthuong\source\MISA_LEARN\C#\MISA.CukCuk.Api\MISA.CukCuk.Api\obj\Debug\netcoreapp3.1\MISA.CukCuk.Api.RazorTargetAssemblyInfo.cache
 C:\Users\hthuong\source\MISA_LEARN\C#\MISA.CukCuk.Api\MISA.CukCuk.Api\obj\Debug\netcoreapp3.1\MISA.CukCuk.Api.genruntimeconfig.cache
+H:\MISA.Web2021_03\MISA_LEARN\C#\MISA.CukCuk.Api\MISA.CukCuk.Api\bin\Debug\netcoreapp3.1\Dapper.dll
+H:\MISA.Web2021_03\MISA_LEARN\C#\MISA.CukCuk.Api\MISA.CukCuk.Api\bin\Debug\netcoreapp3.1\MySqlConnector.dll
+H:\MISA.Web2021_03\MISA_LEARN\C#\MISA.CukCuk.Api\MISA.CukCuk.Api\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+H:\MISA.Web2021_03\MISA_LEARN\C#\MISA.CukCuk.Api\MISA.CukCuk.Api\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+H:\MISA.Web2021_03\MISA_LEARN\C#\MISA.CukCuk.Api\MISA.CukCuk.Api\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+H:\MISA.Web2021_03\MISA_LEARN\C#\MISA.CukCuk.Api\MISA.CukCuk.Api\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+H:\MISA.Web2021_03\MISA_LEARN\C#\MISA.CukCuk.Api\MISA.CukCuk.Api\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+H:\MISA.Web2021_03\MISA_LEARN\C#\MISA.CukCuk.Api\MISA.CukCuk.Api\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+H:\MISA.Web2021_03\MISA_LEARN\C#\MISA.CukCuk.Api\MISA.CukCuk.Api\obj\Debug\netcoreapp3.1\MISA.CukCuk.Api.csproj.CopyComplete
