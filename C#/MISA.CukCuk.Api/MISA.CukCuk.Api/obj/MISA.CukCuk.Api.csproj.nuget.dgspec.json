@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\hthuong\\source\\MISA_LEARN\\C#\\MISA.CukCuk.Api\\MISA.CukCuk.Api\\MISA.CukCuk.Api.csproj": {}
+    "H:\\MISA.Web2021_03\\MISA_LEARN\\C#\\MISA.CukCuk.Api\\MISA.CukCuk.Api\\MISA.CukCuk.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\hthuong\\source\\MISA_LEARN\\C#\\MISA.CukCuk.Api\\MISA.CukCuk.Api\\MISA.CukCuk.Api.csproj": {
+    "H:\\MISA.Web2021_03\\MISA_LEARN\\C#\\MISA.CukCuk.Api\\MISA.CukCuk.Api\\MISA.CukCuk.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hthuong\\source\\MISA_LEARN\\C#\\MISA.CukCuk.Api\\MISA.CukCuk.Api\\MISA.CukCuk.Api.csproj",
+        "projectUniqueName": "H:\\MISA.Web2021_03\\MISA_LEARN\\C#\\MISA.CukCuk.Api\\MISA.CukCuk.Api\\MISA.CukCuk.Api.csproj",
         "projectName": "MISA.CukCuk.Api",
-        "projectPath": "C:\\Users\\hthuong\\source\\MISA_LEARN\\C#\\MISA.CukCuk.Api\\MISA.CukCuk.Api\\MISA.CukCuk.Api.csproj",
-        "packagesPath": "C:\\Users\\hthuong\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hthuong\\source\\MISA_LEARN\\C#\\MISA.CukCuk.Api\\MISA.CukCuk.Api\\obj\\",
+        "projectPath": "H:\\MISA.Web2021_03\\MISA_LEARN\\C#\\MISA.CukCuk.Api\\MISA.CukCuk.Api\\MISA.CukCuk.Api.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "H:\\MISA.Web2021_03\\MISA_LEARN\\C#\\MISA.CukCuk.Api\\MISA.CukCuk.Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\hthuong\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -57,7 +57,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

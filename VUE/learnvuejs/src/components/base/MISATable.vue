@@ -34,19 +34,23 @@
 </template>
 
 <script>
-import axios from 'axios'
+// import axios from 'axios'
 
 export default {
     name: 'MISATable',
-    created(){
-        this.loadData();
-    },
     props: {
         isLoad: Boolean
     },
+    created(){
+        this.$store.dispatch('getCustomers')
+    },
     data(){
         return{
-        dataList: [],
+        }
+    },
+    computed:{
+        dataList(){
+            return this.$store.getters.getCustomers
         }
     },
     watch: {
@@ -60,19 +64,6 @@ export default {
             console.log(event.screenY);
             console.log(customerId);
             this.$emit("doubleClick", event.screenX, event.screenY ,customerId)
-        },
-        loadData(){
-            axios.get('https://localhost:44312/api/person')
-            .then(response => {
-                console.log(response)
-                this.dataList =response.data;
-                this.$emit('LoadDone');
-            })
-            .catch(error => {
-                console.log(error)
-                this.errored = true
-            })
-            .finally(() => this.loading = false)
         },
         formatDate(datee) {
             if(datee != null){

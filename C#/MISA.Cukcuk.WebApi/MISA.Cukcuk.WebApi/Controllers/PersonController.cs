@@ -171,6 +171,37 @@ namespace MISA.Cukcuk.WebApi.Controllers
             }
             return "success";
         }
+        [HttpDelete("{customerId}")]
+        public string DeletePeople([FromRoute] string customerId)
+        {
+            Guid.TryParse(customerId, out Guid idPerson);
+            if (idPerson != null && idPerson != Guid.Empty)
+            {
+                try
+                {
+                    var personFind = Persons.Where(p => p.CustomerId == idPerson).FirstOrDefault();
+                    if(personFind != null)
+                    {
+                        Persons.Remove(personFind);
+                        return "success!";
+                    }
+                    else
+                    {
+                        return "not exit!";
+                    }
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                    return "error!";
+                }
+            }
+            else
+            {
+                return "id null";
+            }
+        }
 
         [HttpPut("{customerId}")]
         public string Put([FromRoute] string CustomerId, [FromBody] Person person)

@@ -100,10 +100,10 @@ namespace MISA.CukCuk.Api
             return res;
         }
 
-        public static ResponeResult UpdateCustomer(Guid customerID, Customer customer)
-        {
+        //public static ResponeResult UpdateCustomer(Guid customerID, Customer customer)
+        //{
             
-        }
+        //}
         public static ResponeResult DeleteCustomer(Guid customerID)
         {
             var res = new ResponeResult();

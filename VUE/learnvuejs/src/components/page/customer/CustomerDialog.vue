@@ -4,7 +4,7 @@
         </div>
         <div class="mini-select" id="mini-select" ref="box" :style="calcPosition">
             <button type="button" id="button-edit"><i class="fas fa-edit"></i></button>
-            <button type="button" id="button-delete-item"><i class="far fa-trash-alt"></i></button>
+            <button type="button" id="button-delete-item"  @click="deleteCustomer()"><i class="far fa-trash-alt"></i></button>
         </div>
     </div>
 </template>
@@ -34,6 +34,10 @@ export default {
     methods: {
         closedialog(){
             this.$emit("closedialog");
+        },
+        deleteCustomer(){
+            alert("Bạn chắc chắn muốn xóa khách hàng?");
+            this.$store.dispatch('deleteCustomer', this.location.customerId)
         }
     }
 }

@@ -32,7 +32,8 @@ export default {
       msg: "",
       location : {
         x : 100,
-        y : 100
+        y : 100,
+        customerId : ""
       }
     }
   },
@@ -42,6 +43,7 @@ export default {
       this.isShowDialogMini = true;
       this.location.x = x;
       this.location.y = y;
+      this.location.customerId = customerId;
       console.log(customerId);
     },
     closeDialogMini(){
