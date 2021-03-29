@@ -77,11 +77,14 @@ export default {
 /* button thêm khách hàng */
 .button-add-eml{
     background-color: green;
-    border-color: rgb(179, 175, 175);
+    border: none;
     padding: 4px;
     position: absolute;
     right: 8px;
     outline: none;
+    margin-top: 8px;
+    border-radius: 4px;
+    
 }
 .button-add-eml span{
     color: white;
@@ -103,6 +106,7 @@ export default {
     background-color: white;
     outline: none;
     border: 1px solid rgb(179, 175, 175);
+    border-radius: 4px;
 }
 .button-refresh:hover{
     background-color: rgb(212, 206, 206);
@@ -113,12 +117,14 @@ export default {
     margin: 4px;
     border-color: rgb(179, 175, 175);
     outline: none;
+    border-radius: 4px;
 }
 .find-table{
     vertical-align :middle;
     padding: 8px;
     margin: 4px;
     border: 1px solid rgb(179, 175, 175);
+    border-radius: 4px;
 }
 .find-table input{
     border: none;

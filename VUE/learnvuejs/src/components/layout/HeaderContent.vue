@@ -37,7 +37,7 @@ export default {
 .header{
     /* phẩn header */
     height: 50px;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid #e5e5e5;
     padding: 8px;
     display: flex;
     width: calc(100% - 16px);

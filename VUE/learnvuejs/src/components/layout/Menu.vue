@@ -63,6 +63,7 @@ export default {
 .menu{
     width: 220px;
     height: calc(100vh - 16px);
+    border-right: 1px solid #e5e5e5;
 }
 /* menu chính */
 .image-menu{
