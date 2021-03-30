@@ -19,6 +19,10 @@ const store = new Vuex.Store({
         },
         removeCustomer(state, customerId) {
             state.customers = state.customers.filter(p => p.customerId != customerId);
+            console.log(state.customers)
+        },
+        addCustomer(state, customer) {
+            state.customers = state.customers.add(customer);
         }
     },
     actions: {
@@ -34,7 +38,7 @@ const store = new Vuex.Store({
         deleteCustomer(context, customerId) {
 
             alert(customerId)
-            axios.delete('https://localhost:44312/api/person/' + customerId)
+            axios.delete('https://localhost:44384/api/customer/' + customerId)
                 .then(response => {
                     console.log(response)
                     alert("delete success!")
@@ -44,6 +48,22 @@ const store = new Vuex.Store({
                     console.log(error);
                     alert("delete error!")
                 })
+        },
+        insertCustomer(context, customer){
+            alert("insert");
+            axios({
+                method: "post",
+                url: "https://localhost:44384/api/customer",
+                data: customer,
+            }).then(response => {
+                alert(" success!")
+                console.log(response);
+                this.closedialog();
+                context.commit("addCustomer", response.data.data)
+            })
+            .catch(error => {
+                console.log(error);
+            });
         }
     }
 })

@@ -20,4 +20,8 @@ export default {
 
 <style>
 @import './css/font.css';
+body{
+  margin: 0px;
+  padding: 0px;
+}
 </style>

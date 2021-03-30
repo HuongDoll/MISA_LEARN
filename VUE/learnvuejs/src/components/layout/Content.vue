@@ -37,5 +37,6 @@ export default {
 <style scoped>
 .content{
     width: calc(100% - 220px);
+    padding: 8px;
 }
 </style>

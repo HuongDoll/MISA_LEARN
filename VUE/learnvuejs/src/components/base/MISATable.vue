@@ -3,7 +3,8 @@
         <table id="table-employee">
             <thead>
                 <tr>
-                    <td class="wight-2">Mã khách hàng</td>
+                    <td class="wight-05">#</td>
+                    <td class="wight-1">Mã khách hàng</td>
                     <td class="wight-2">Họ và tên</td>
                     <td class="wight-1">Giới tính</td>
                     <td class="wight-2">Ngày sinh </td>
@@ -18,7 +19,8 @@
             <tbody>
                 <!-- truyền vào dữ liệu thông tin khách hàng  -->
                 <tr v-for="(data, index) in dataList" :key="index" @dblclick="clickrow($event, data.customerId)" >
-                    <td class="wight-2">{{data.customerCode}}</td>
+                    <td class="wight-05">{{index + 1}}</td>
+                    <td class="wight-1">{{data.customerCode}}</td>
                     <td class="wight-2">{{data.fullName}}</td>
                     <td class="wight-1">{{formatGender(data.gender)}}</td>
                     <td class="wight-2">{{formatDate(data.dateOfBirth)}} </td>
@@ -120,14 +122,16 @@ table{
     overflow-x: auto;
 }
 .table-eml tr {
-    border-bottom: 1px solid rgb(179, 175, 175);
+    border-bottom: 1px solid #bbbbbb;
     display: block;
     padding: 12px;
+    font-size: 12px;
 }
 .table-eml thead tr {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #bbbbbb;
     display: block;
     padding: 12px;
+    font-size: 12px;
 }
 .table-eml tbody tr:hover{
     background-color: whitesmoke;
@@ -169,6 +173,9 @@ table{
 /* định dạng độ rộng phần tử */
 .wight-1{
     min-width: 100px;
+}
+.wight-05{
+    min-width: 50px;
 }
 .wight-2{
     min-width: 200px;

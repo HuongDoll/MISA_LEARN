@@ -12,7 +12,7 @@
                 <!-- filter của danh sách khách hàng -->
                 <div class="flex">
                     <div class="find-table flex">
-                        <i class="fas fa-search"></i>
+                        <span><img src="../../assets/content/icon/search.png"></span>
                         <input placeholder="Tìm kiếm theo mã, tên hoặc ố điện thoại..." id="input-filter">
                     </div>
 
@@ -72,28 +72,33 @@ export default {
 .content-title .title-content{
     padding: 8px;
     font-size: 20px;
+    padding-left: 0px;
 }
 
 /* button thêm khách hàng */
 .button-add-eml{
-    background-color: green;
+    background-color: #019160;
     border: none;
-    padding: 4px;
     position: absolute;
     right: 8px;
     outline: none;
     margin-top: 8px;
     border-radius: 4px;
-    
+    height: 40px;
+    font-size: 13px;
+    color: #ffffff;
+    font-style: Regular;
+    padding-right: 16px;
+    padding-left: 16px;
+    text-align: center;
 }
-.button-add-eml span{
-    color: white;
-    margin: 4px;
-    margin-bottom: 8px;
+.button-add-eml:hover {
+    background-color: #2FBE8E;
 }
+
 .button-add-eml img{
     color: white;
-    width: 25px;
+    width: 20px;
     margin: 0px;
 }
 
@@ -101,38 +106,51 @@ export default {
     position: absolute;
     margin-top: 4px;
     right: 8px;
-    width: 35px;
-    height: 35px;
+    width: 40px;
+    height: 40px;
     background-color: white;
     outline: none;
-    border: 1px solid rgb(179, 175, 175);
+    border: 1px solid #BBBBBB;
     border-radius: 4px;
 }
 .button-refresh:hover{
-    background-color: rgb(212, 206, 206);
+    background-color: #019160;
+    color: #000000;
 }
 .box-form-select{
     vertical-align :middle;
-    padding: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
     margin: 4px;
-    border-color: rgb(179, 175, 175);
+    border:1px solid #BBBBBB;
     outline: none;
     border-radius: 4px;
+    height: 40px;
+    font-size: 11px;
+    color: #BBBBBB;
+    font-style: regular;
 }
 .find-table{
     vertical-align :middle;
-    padding: 8px;
+    padding: 7px;
     margin: 4px;
-    border: 1px solid rgb(179, 175, 175);
+    margin-left: 0px;
+    border: 1px solid #BBBBBB;
     border-radius: 4px;
 }
 .find-table input{
     border: none;
     outline: none;
+    font-style: italic;
+    color: #BBBBBB;
+    font-size: 11px;
 }
-.find-table i{
-    color: rgb(179, 175, 175);
-    margin-right: 4px;
+.find-table img{
+    color: #BBBBBB;
+    padding-right: 4px;
+    padding-top: 4px;
+    width: 16px;
+    height: 16px;
 }
 .flex{
     display: flex;

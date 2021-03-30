@@ -122,5 +122,14 @@ namespace MISA.CukCuk.Api.Resource {
                 return ResourceManager.GetString("RemoveSuccess", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Them nguoi dung thanh cong.
+        /// </summary>
+        public static string UpdateCustomerSuccess {
+            get {
+                return ResourceManager.GetString("UpdateCustomerSuccess", resourceCulture);
+            }
+        }
     }
 }

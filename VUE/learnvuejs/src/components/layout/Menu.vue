@@ -42,7 +42,7 @@
 
 <script>
 export default {
-  name: 'menu',
+  name: 'menuRight',
   props: {
     msg: String
   },
@@ -68,12 +68,16 @@ export default {
 /* menu chính */
 .image-menu{
     width: 100%;
-    height: 50px;
-    padding: 8px;
+    height: 46px;
+    padding-left: 16px;
+    padding-top: 12px;
+    padding-bottom: 12px;
 }
 .image-menu-icon{
-    width: 25px;
+    width: 24px;
+    height: 24px;
     vertical-align :middle;
+    margin-right: 10px;
 }
 .image-menu-logo{
     width: 130px;
@@ -81,19 +85,28 @@ export default {
 }
 /* tùy chỉnh lựa chọn  */
 .menu-option{
+    padding-top: 12px;
     vertical-align: middle;
-    padding: 8px;
+    height: 32px;
+    font-style: medium;
+    font-size: 13px;
+    padding-left: 16px;
 }
 .menu-option img {
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
     align-items: center;
-    margin-right: 8px;
+    vertical-align: middle;
+    margin-right: 10px;
 }
 .menu-option span{
     vertical-align: middle;
 }
 .menu-option:hover{
-    background-color: whitesmoke;
+    background-color: #019160;
+}
+.menu-option:focus{
+    background-color: #019160;
+    color: #ffffff;
 }
 </style>

@@ -51,3 +51,14 @@ H:\MISA.Web2021_03\MISA_LEARN\C#\MISA.CukCuk.Api\MISA.CukCuk.Api\bin\Debug\netco
 H:\MISA.Web2021_03\MISA_LEARN\C#\MISA.CukCuk.Api\MISA.CukCuk.Api\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 H:\MISA.Web2021_03\MISA_LEARN\C#\MISA.CukCuk.Api\MISA.CukCuk.Api\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 H:\MISA.Web2021_03\MISA_LEARN\C#\MISA.CukCuk.Api\MISA.CukCuk.Api\obj\Debug\netcoreapp3.1\MISA.CukCuk.Api.csproj.CopyComplete
+C:\Users\hthuong\source\MISA_LEARN\C#\MISA.CukCuk.Api\MISA.CukCuk.Api\bin\Debug\netcoreapp3.1\Dapper.dll
+C:\Users\hthuong\source\MISA_LEARN\C#\MISA.CukCuk.Api\MISA.CukCuk.Api\bin\Debug\netcoreapp3.1\MySqlConnector.dll
+C:\Users\hthuong\source\MISA_LEARN\C#\MISA.CukCuk.Api\MISA.CukCuk.Api\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+C:\Users\hthuong\source\MISA_LEARN\C#\MISA.CukCuk.Api\MISA.CukCuk.Api\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\hthuong\source\MISA_LEARN\C#\MISA.CukCuk.Api\MISA.CukCuk.Api\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\hthuong\source\MISA_LEARN\C#\MISA.CukCuk.Api\MISA.CukCuk.Api\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\hthuong\source\MISA_LEARN\C#\MISA.CukCuk.Api\MISA.CukCuk.Api\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\hthuong\source\MISA_LEARN\C#\MISA.CukCuk.Api\MISA.CukCuk.Api\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\hthuong\source\MISA_LEARN\C#\MISA.CukCuk.Api\MISA.CukCuk.Api\obj\Debug\netcoreapp3.1\MISA.CukCuk.Api.csproj.CopyComplete
+C:\Users\hthuong\source\MISA_LEARN\C#\MISA.CukCuk.Api\MISA.CukCuk.Api\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\hthuong\source\MISA_LEARN\C#\MISA.CukCuk.Api\MISA.CukCuk.Api\bin\Debug\netcoreapp3.1\ServiceStack.Interfaces.dll

@@ -138,4 +138,7 @@
   <data name="RemoveSuccess" xml:space="preserve">
     <value>Xóa người dùng thành công</value>
   </data>
+  <data name="UpdateCustomerSuccess" xml:space="preserve">
+    <value>Them nguoi dung thanh cong</value>
+  </data>
 </root>

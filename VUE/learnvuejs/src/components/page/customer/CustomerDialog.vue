@@ -37,7 +37,8 @@ export default {
         },
         deleteCustomer(){
             alert("Bạn chắc chắn muốn xóa khách hàng?");
-            this.$store.dispatch('deleteCustomer', this.location.customerId)
+            this.$store.dispatch('deleteCustomer', this.location.customerId);
+            this.$emit("closedialog");
         }
     }
 }

@@ -55,11 +55,11 @@ export default {
     border-radius: 50%;
     margin: 8px;
     outline: none;
-    border: 1px solid gray;
+    border: 1px solid #bbbbbb;
     background-color: white;
 }
 .botton-page-center button:hover{
-    background-color: rgb(194, 192, 192);
+    background-color: #019160;
 }
 .botton-page-right{
     width: 20%;
@@ -67,8 +67,8 @@ export default {
     padding: 8px;
 }
 .button-icon{
-    border: none !important;
+    border: 1px solid #bbbbbb !important;
     font-size: 16px;
-    border-radius: 0px !important;
+    border-radius: 4px !important;
 }
 </style>

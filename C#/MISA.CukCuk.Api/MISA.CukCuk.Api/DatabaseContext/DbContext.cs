@@ -18,14 +18,14 @@ namespace MISA.CukCuk.Api
         {
             new Customer()
             {
-                CustomerID = Guid.NewGuid(),
+                CustomerId = Guid.NewGuid(),
                 CustomerCode = "123",
                 FullName = "Hoang thi Thu Huong",
                 Gender = (int)Gender.FEMAIL,
             },
             new Customer()
             {
-                CustomerID = Guid.NewGuid(),
+                CustomerId = Guid.NewGuid(),
                 CustomerCode = "124",
                 FullName = "Huong Doll",
                 Gender = (int)Gender.FEMAIL,
@@ -37,7 +37,7 @@ namespace MISA.CukCuk.Api
         }
         public static Customer GetCustomers(Guid customerId)
         {
-            return Customers.Where(c => c.CustomerID == customerId).FirstOrDefault();
+            return Customers.Where(c => c.CustomerId == customerId).FirstOrDefault();
         }
         public static ResponeResult InsertCustomer(Customer customer)
         {
@@ -47,7 +47,7 @@ namespace MISA.CukCuk.Api
             var validateCustomer = ValidateCustomer(customer);
             if (validateCustomer.IsValidate)
             {
-                customer.CustomerID = Guid.NewGuid();
+                customer.CustomerId = Guid.NewGuid();
                 Customers.Add(customer);
                 res.Data = customer;
             }
@@ -100,15 +100,46 @@ namespace MISA.CukCuk.Api
             return res;
         }
 
-        //public static ResponeResult UpdateCustomer(Guid customerID, Customer customer)
-        //{
-            
-        //}
+        public static ResponeResult UpdateCustomer(Guid customerID, Customer customer)
+        {
+            var res = new ResponeResult();
+            var findCustomer = Customers
+                    .Where(c => c.CustomerId == customerID)
+                     .FirstOrDefault();
+            if (findCustomer == null)
+            {
+                res.Data = null;
+                res.DevMsg = Resource.Message.ErrorData;
+                res.UserMsg = Resource.Message.ErrorData;
+            }
+            else
+            {
+                var exitCustomer = Customers
+                    .Where(c => c.CustomerCode == customer.CustomerCode)
+                     .FirstOrDefault();
+                if (exitCustomer != null && exitCustomer != findCustomer)
+                {
+                    res.Data = null;
+                    res.DevMsg = Resource.Message.ExceptionDuplicate;
+                    res.UserMsg = Resource.Message.ExceptionDuplicate;
+                }
+                else
+                {
+                    customer.CustomerId = customerID;
+                    Customers.Remove(findCustomer);
+                    Customers.Add(customer);
+                    res.Data = customer;
+                    res.DevMsg = Resource.Message.UpdateCustomerSuccess;
+                    res.UserMsg = Resource.Message.UpdateCustomerSuccess;
+                }
+            }
+            return res; 
+        }
         public static ResponeResult DeleteCustomer(Guid customerID)
         {
             var res = new ResponeResult();
             var findCustomer = Customers
-                    .Where(c => c.CustomerID == customerID)
+                    .Where(c => c.CustomerId == customerID)
                      .FirstOrDefault();
             if (findCustomer == null)
             {

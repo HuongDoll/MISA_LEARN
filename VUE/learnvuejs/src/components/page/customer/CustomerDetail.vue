@@ -2,12 +2,15 @@
   <div>
     <div class="dialog" id="dialog" @click="closedialog()"></div>
     <form class="dialog-child" id="dialog-child">
-      <div class="tab-close">
+      
+      <div class="title">
+        <div>THÔNG TIN KHÁCH HÀNG</div>
+        <div class="tab-close">
         <button @click="closedialog()">
-          <i class="fas fa-times" id="close-dialog"></i>
+          <i class="fas fa-times fa-5x" id="close-dialog"></i>
         </button>
+        </div>
       </div>
-      <div class="title">THÔNG TIN KHÁCH HÀNG</div>
       <div class="parent-content">
         <div class="content-dialog">
           <div class="content-left wight-1-3">
@@ -76,7 +79,8 @@
                 </div>
                 <div class="group-sex wight-1-2">
                   <div>Giới tính</div>
-                  <span class="radio-sex">
+                  <div>
+                    <span class="radio-sex wight-1-3">
                     <input
                       type="radio"
                       id="male"
@@ -86,7 +90,7 @@
                     />
                     <label for="male">Nam</label>
                   </span>
-                  <span class="radio-sex">
+                  <span class="radio-sex wight-1-3">
                     <input
                       type="radio"
                       id="female"
@@ -96,7 +100,7 @@
                     />
                     <label for="female">Nữ</label>
                   </span>
-                  <span class="radio-sex">
+                  <span class="radio-sex wight-1-3">
                     <input
                       type="radio"
                       id="other"
@@ -107,6 +111,8 @@
                     />
                     <label for="other">Khác</label>
                   </span>
+                  </div>
+                  
                 </div>
               </div>
             </div>
@@ -185,7 +191,6 @@
   </div>
 </template>
 <script>
-import axios from "axios";
 export default {
   name: "CustomerDetail",
   props: {
@@ -238,21 +243,8 @@ export default {
       console.log(vm.customer);
       if (vm.validate()) {
         if (vm.msg == "post") {
-            axios({
-                method: "post",
-                url: "https://localhost:44312/api/person",
-                data: vm.customer,
-            }).then((response) => {
-                console.log(response);
-                alert("success");
-                this.$emit("reload");
-                this.closedialog();
-            })
-            .catch((error) => {
-                console.log(error);
-                this.errored = true;
-                alert("error");
-            });
+            this.$store.dispatch('insertCustomer', vm.customer);
+            this.closedialog();
         }
       }
     },
@@ -322,7 +314,7 @@ export default {
 }
 .mini-select button i {
   font-size: 16px;
-  color: gray;
+  color: #bbbbbb;
 }
 .mini-select button i:hover {
   color: black;
@@ -346,32 +338,43 @@ export default {
 }
 
 .tab-close {
-  text-align: right;
-  margin: 8px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
 }
+.tab-close button{
+  background-color: #ffffff;
+  outline: none;
+  border: none;
+  width: 32px;
+  height: 32px;
+}
+
 .title {
   padding: 20px;
-  padding-left: 40px;
+  padding-left: 24px;
   font-size: 24px;
   font-weight: bold;
+  display: flex;
 }
 .parent-content {
   padding: 8px;
-  padding-right: 40px;
+  padding-right: 24px;
+  padding-left: 24px;
 }
 .content-dialog {
   display: flex;
-  padding: 8px;
+  padding: 0px;
 }
 .content-left {
   text-align: center;
-  padding-left: 32px;
+  padding-left: 0px;
   padding-top: 8px;
 }
 .content-left img {
   width: 75%;
   border-radius: 50%;
-  border: 1px solid black;
+  border: 1px solid #bbbbbb;
 }
 .content-name {
   padding-top: 20px;
@@ -384,21 +387,29 @@ export default {
   padding: 8px;
 }
 .group input {
-  width: 100%;
+  width: calc(100% - 20px);
   height: 40px;
-  border-radius: 5px;
-  border: 1px solid gray;
+  border-radius: 4px;
+  border: 1px solid #bbbbbb;
   outline: none;
-  padding-left: 8px;
+  padding-left: 16px;
+  font-size: 11px;
+}
+.group input[type = "date"]{
+  width: calc(100% - 28px);
+}
+.group input:focus{
+  border: 1px solid #019160;
 }
 .group select {
-  width: calc(100% + 12px);
+  width: calc(100% - 0px);
   height: 44px;
   border-radius: 5px;
+  border: 1px solid #bbbbbb;
   outline: none;
 }
 .group-input .group label {
-  padding-bottom: 8px;
+  padding-bottom: 4px;
   display: block;
 }
 .radio-sex {
@@ -408,47 +419,90 @@ export default {
 .radio-sex span {
   vertical-align: middle;
 }
-.group-sex input {
-  width: 20px;
-  height: 20px;
-  border-radius: 5px;
-  border: 1px solid gray;
-  outline: none;
-  position: relative;
-  top: 4px;
+
+input[type="radio"] {
+  display: none;
 }
+
+input[type="radio"]+label:before {
+  content: "";
+  /* create custom radiobutton appearance */
+  display: flex;
+  width: 12px;
+  height: 12px;
+  padding: 4px;
+  margin-right: 3px;
+  /* background-color only for content */
+  background-clip: content-box;
+  border: 1px solid #019160;
+  background-color: #ffffff;
+  border-radius: 50%;
+}
+
+/* appearance for checked radiobutton */
+input[type="radio"]:checked + label:before {
+  background-color: #019160;
+}
+
+/* optional styles, I'm using this for centering radiobuttons */
+label {
+  display: flex;
+  padding-left: 4px;
+  align-items: center;
+}
+
 .group-sex div {
   padding-bottom: 8px;
   padding-top: 8px;
+  width: 100%;
+  display: flex;
 }
 
 .content-down {
-  padding: 8px;
-  margin-left: 32px;
+  padding: 0px;
+  margin-left: 0px;
 }
 .footer {
-  padding: 8px;
   padding-right: 20px;
   text-align: right;
   vertical-align: middle;
-  background-color: rgb(184, 179, 179);
+  background-color: #E9EBEE;
+  height: 60px;
 }
 .button-delete {
   height: 40px;
   background: none;
   border: none;
   outline: none;
+  font-size: 13px;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-right: 16px;
+  margin-top: 10px;
+  vertical-align: middle;
+}
+.button-delete:hover{
+  border: 1px solid #bbbbbb;
 }
 .button-save {
   height: 40px;
-  border: 1px solid rgb(12, 97, 57);
-  border-radius: 5px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 4px;
   vertical-align: middle;
-  background-color: rgb(12, 97, 57);
+  background-color: #019160;
   outline: none;
+  font-size: 13px;
+  color: #ffffff;
+  padding-left: 8px;
+  padding-right: 16px;
+}
+.button-save:hover{
+  background-color: #2FBE8E;
 }
 .button-save span {
   vertical-align: middle;
+  margin-left: 8px;
 }
 .button-save i {
   font-size: 25px;

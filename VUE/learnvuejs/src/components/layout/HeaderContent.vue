@@ -16,7 +16,7 @@
 
 <script>
 export default {
-  name: 'content title',
+  name: 'HeaderContent',
   props: {
     msg: String
   },
@@ -39,12 +39,14 @@ export default {
     height: 50px;
     border-bottom: 1px solid #e5e5e5;
     padding: 8px;
+    padding-left: 0px;
     display: flex;
     width: calc(100% - 16px);
 }
 .header select{
     vertical-align :middle;
     padding: 8px;
+    padding-left: 0px;
     border-color: white;
     outline: none;
 }
@@ -59,13 +61,13 @@ export default {
     display: flex;
 }
 .header-acount .option-image{
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 16px;
 }
 .header-acount .avt{
     width: 40px;
 }
 .header-acount div{
-    padding: 8px;
+    padding: 16px;
 }
 </style>

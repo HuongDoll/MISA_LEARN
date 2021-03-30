@@ -33,7 +33,7 @@ export default {
       location : {
         x : 100,
         y : 100,
-        customerId : ""
+        id: "",
       }
     }
   },
@@ -71,5 +71,6 @@ export default {
 <style scoped>
 .maincontent{
     width: 100%;
+    padding: 8px;
 }
 </style>

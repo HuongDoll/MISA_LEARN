@@ -42,7 +42,7 @@ namespace MISA.CukCuk.Api.Controllers
 
             try
             {
-                Guid.TryParse(id,out Guid customerId);
+                Guid.TryParse(id, out Guid customerId);
                 if (customerId != null && customerId != Guid.Empty)
                 {
                     res.Data = DbContext.GetCustomers(customerId);
@@ -51,7 +51,7 @@ namespace MISA.CukCuk.Api.Controllers
                 {
 
                 }
-                
+
             }
             catch (Exception ex)
             {
@@ -89,7 +89,7 @@ namespace MISA.CukCuk.Api.Controllers
             {
                 try
                 {
-                    //res = DbContext.UpdateCustomer(customerId, customer);
+                    res = DbContext.UpdateCustomer(customerId, customer);
                 }
                 catch (Exception ex)
                 {
@@ -103,7 +103,7 @@ namespace MISA.CukCuk.Api.Controllers
                 res.UserMsg = Resource.Message.ExceptionUser;
                 res.DevMsg = Resource.Message.ExceptionUser;
             }
-            
+
             return res;
         }
 
