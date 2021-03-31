@@ -4,7 +4,7 @@
             <thead>
                 <tr>
                     <td class="wight-05">#</td>
-                    <td class="wight-1">Mã khách hàng</td>
+                    <td class="wight-2">Mã khách hàng</td>
                     <td class="wight-2">Họ và tên</td>
                     <td class="wight-1">Giới tính</td>
                     <td class="wight-2">Ngày sinh </td>
@@ -20,7 +20,7 @@
                 <!-- truyền vào dữ liệu thông tin khách hàng  -->
                 <tr v-for="(data, index) in dataList" :key="index" @dblclick="clickrow($event, data.customerId)" >
                     <td class="wight-05">{{index + 1}}</td>
-                    <td class="wight-1">{{data.customerCode}}</td>
+                    <td class="wight-2">{{data.customerCode}}</td>
                     <td class="wight-2">{{data.fullName}}</td>
                     <td class="wight-1">{{formatGender(data.gender)}}</td>
                     <td class="wight-2">{{formatDate(data.dateOfBirth)}} </td>
@@ -116,9 +116,10 @@ export default {
 table{
     margin: 0;
 }
+tr:nth-child(even){background-color: #E9EBEE ;}
 .table-eml{
     width: 100%;
-    height: calc(100vh - 220px);
+    height: calc(100vh - 240px);
     overflow-x: auto;
 }
 .table-eml tr {
@@ -134,7 +135,7 @@ table{
     font-size: 12px;
 }
 .table-eml tbody tr:hover{
-    background-color: whitesmoke;
+    background-color: #E5E5E5;
 }
 .table-eml thead{
     font-weight: bold;

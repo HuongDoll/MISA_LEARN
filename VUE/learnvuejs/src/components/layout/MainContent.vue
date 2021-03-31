@@ -3,8 +3,8 @@
     <!-- <router-view></router-view> -->
     <Filter-content @opendialog="opendialogput" />
     <MISATable :isLoad =isLoadDataTable @LoadDone="loadDone" @doubleClick="doubleClick" />
-    <CustomerDetail :msg =msg v-show="isShowDialog" @closedialog="clodedialog" @reload="loadtable" />
-    <CustomerDialog v-show="isShowDialogMini" :location=location @closedialog="closeDialogMini" />
+    <CustomerDetail :msg =msg :id=location.customerId v-show="isShowDialog" @closedialog="clodedialog" @reload="loadtable" />
+    <CustomerDialog v-show="isShowDialogMini" :location=location @closedialog="closeDialogMini" @put="editCustomer"/>
   </div>
 </template>
 
@@ -33,12 +33,16 @@ export default {
       location : {
         x : 100,
         y : 100,
-        id: "",
+        customerId: "",
       }
     }
   },
   
   methods:{
+    editCustomer(){
+      this.isShowDialog = true;
+      this.msg = "put";
+    },
     doubleClick(x, y ,customerId){
       this.isShowDialogMini = true;
       this.location.x = x;
@@ -71,6 +75,5 @@ export default {
 <style scoped>
 .maincontent{
     width: 100%;
-    padding: 8px;
 }
 </style>

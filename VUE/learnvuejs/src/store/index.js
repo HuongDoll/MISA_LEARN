@@ -6,12 +6,18 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
     state: {
         customers: [],
+        customerById: [],
     },
     getters: {
         getCustomers(state) {
             console.log("getter " + state.customers)
             return state.customers
+        },
+        getCustomerById(state){
+            console.log("getter customerId")
+            return state.customerById;
         }
+
     },
     mutations: {
         setCustomers(state, payload) {
@@ -22,10 +28,17 @@ const store = new Vuex.Store({
             console.log(state.customers)
         },
         addCustomer(state, customer) {
-            state.customers = state.customers.add(customer);
+            state.customers.push(customer);
+            console.log(state.customers);
+        },
+        getCustomerById(state, customerId){
+            state.customerById = state.customers.filter(p => p.customerId == customerId);
         }
     },
     actions: {
+        getCustomerById(context, customerId){
+            context.commit("getCustomerById", customerId)
+        },
         getCustomers(context) {
             console.log("actions")
             axios.get('https://localhost:44384/api/customer')
@@ -37,7 +50,6 @@ const store = new Vuex.Store({
         },
         deleteCustomer(context, customerId) {
 
-            alert(customerId)
             axios.delete('https://localhost:44384/api/customer/' + customerId)
                 .then(response => {
                     console.log(response)
@@ -50,21 +62,39 @@ const store = new Vuex.Store({
                 })
         },
         insertCustomer(context, customer){
-            alert("insert");
             axios({
                 method: "post",
                 url: "https://localhost:44384/api/customer",
                 data: customer,
             }).then(response => {
                 alert(" success!")
-                console.log(response);
-                this.closedialog();
+                console.log(response.data.data);
                 context.commit("addCustomer", response.data.data)
             })
             .catch(error => {
                 console.log(error);
+                alert(" errrrrrrrrrr!")
             });
-        }
+        },
+        updateCustomer(context, customer){
+            console.log("customer");
+            console.log(customer);
+            axios({
+                method: "put",
+                url: 'https://localhost:44384/api/customer/' + customer.customerId,
+                data: customer,
+            }).then(response => {
+                alert(" success!")
+                console.log(response.data.data);
+                context.commit("removeCustomer", customer.customerId);
+                context.commit("addCustomer", response.data.data);
+            })
+            .catch(error => {
+                console.log(error);
+                alert(" errrrrrrrrrr!");
+                console.log(customer);
+            });
+        },
     }
 })
 

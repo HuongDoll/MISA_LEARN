@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using MISA.CukCuk.Api.Enumeration;
 using MISA.CukCuk.Api.Model;
 using MISA.CukCuk.Api.Result;
@@ -17,7 +18,7 @@ namespace MISA.CukCuk.Api.Controllers
     {
         // GET: api/<CustomerController>
         [HttpGet]
-        public ResponeResult Get()
+        public IActionResult Get()
         {
             var res = new ResponeResult();
 
@@ -31,12 +32,12 @@ namespace MISA.CukCuk.Api.Controllers
                 //log
             }
 
-            return res;
+            return Ok(res);
         }
 
         // GET api/<CustomerController>/5
         [HttpGet("{id}")]
-        public ResponeResult Get([FromRoute] string id)
+        public IActionResult Get([FromRoute] string id)
         {
             var res = new ResponeResult();
 
@@ -49,7 +50,9 @@ namespace MISA.CukCuk.Api.Controllers
                 }
                 else
                 {
+                    res.OnBadRequest(res);
 
+                    return BadRequest(res);
                 }
 
             }
@@ -59,12 +62,12 @@ namespace MISA.CukCuk.Api.Controllers
                 //log
             }
 
-            return res;
+            return Ok(res);
         }
 
         // POST api/<CustomerController>
         [HttpPost]
-        public ResponeResult Post([FromBody] Customer customer)
+        public IActionResult Post([FromBody] Customer customer)
         {
             var res = new ResponeResult();
             try
@@ -74,9 +77,10 @@ namespace MISA.CukCuk.Api.Controllers
             catch (Exception ex)
             {
                 res.OnException(res, ex);
-                //log
+                return StatusCode(StatusCodes.Status500InternalServerError, res);
+                // log
             }
-            return res;
+            return StatusCode(StatusCodes.Status201Created, res);
         }
 
         // PUT api/<CustomerController>/5

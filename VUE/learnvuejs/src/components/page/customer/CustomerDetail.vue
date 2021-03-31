@@ -6,8 +6,9 @@
       <div class="title">
         <div>THÔNG TIN KHÁCH HÀNG</div>
         <div class="tab-close">
-        <button @click="closedialog()">
-          <i class="fas fa-times fa-5x" id="close-dialog"></i>
+        <button @click="closedialog()"  class="button-close">
+          <img
+              src="../../../assets/content/icon/x.svg"/>
         </button>
         </div>
       </div>
@@ -195,6 +196,7 @@ export default {
   name: "CustomerDetail",
   props: {
     msg: String,
+    id: String
   },
   data() {
     return {
@@ -219,32 +221,121 @@ export default {
       },
     };
   },
+  watch: {
+    'id'(){ 
+      
+      if(this.msg == "post"){
+        this.customer.address = "";
+        this.customer.companyName = "";
+        this.customer.companyTaxCode = "";
+        this.customer.customerGroupName = "Nhóm khách hàng MISA";
+        this.customer.email = "";
+        this.customer.fullName = "";
+        this.customer.gender = 0;
+        this.customer.memberCardCode = "";
+        this.customer.phoneNumber = "";
+        this.customer.dateOfBirth = null;
+        this.customer.customerCode = "";
+        this.validates.CustomerCode = true;
+        this.validates.FullName = true;
+        this.validates.Email = true;
+        this.validates.PhoneNumber = true;
+      }else{
+        this.$store.dispatch('getCustomerById', this.id);
+        var customerUpdate = this.$store.getters.getCustomerById;
+        console.log(customerUpdate);
+        this.customer.address = customerUpdate[0].address;
+        this.customer.companyName = customerUpdate[0].companyName;
+        this.customer.companyTaxCode = customerUpdate[0].companyTaxCode;
+        this.customer.customerGroupName = customerUpdate[0].customerGroupName;
+        this.customer.email = customerUpdate[0].email;
+        this.customer.fullName = customerUpdate[0].fullName;
+        this.customer.gender = customerUpdate[0].gender;
+        this.customer.memberCardCode = customerUpdate[0].memberCardCode;
+        this.customer.phoneNumber = customerUpdate[0].phoneNumber;
+        this.customer.dateOfBirth = customerUpdate[0].dateOfBirth;
+        this.customer.customerCode = customerUpdate[0].customerCode;
+        this.validates.CustomerCode = true;
+        this.validates.FullName = true;
+        this.validates.Email = true;
+        this.validates.PhoneNumber = true;
+      }
+    },
+    'msg'(){ 
+      
+      if(this.msg == "post"){
+        this.customer.address = "";
+        this.customer.companyName = "";
+        this.customer.companyTaxCode = "";
+        this.customer.customerGroupName = "Nhóm khách hàng MISA";
+        this.customer.email = "";
+        this.customer.fullName = "";
+        this.customer.gender = 0;
+        this.customer.memberCardCode = "";
+        this.customer.phoneNumber = "";
+        this.customer.dateOfBirth = null;
+        this.customer.customerCode = "";
+        this.validates.CustomerCode = true;
+        this.validates.FullName = true;
+        this.validates.Email = true;
+        this.validates.PhoneNumber = true;
+      }else{
+        this.$store.dispatch('getCustomerById', this.id);
+        var customerUpdate = this.$store.getters.getCustomerById;
+        console.log(customerUpdate);
+        this.customer.address = customerUpdate[0].address;
+        this.customer.companyName = customerUpdate[0].companyName;
+        this.customer.companyTaxCode = customerUpdate[0].companyTaxCode;
+        this.customer.customerGroupName = customerUpdate[0].customerGroupName;
+        this.customer.email = customerUpdate[0].email;
+        this.customer.fullName = customerUpdate[0].fullName;
+        this.customer.gender = customerUpdate[0].gender;
+        this.customer.memberCardCode = customerUpdate[0].memberCardCode;
+        this.customer.phoneNumber = customerUpdate[0].phoneNumber;
+        this.customer.dateOfBirth = customerUpdate[0].dateOfBirth;
+        this.customer.customerCode = customerUpdate[0].customerCode;
+        this.validates.CustomerCode = true;
+        this.validates.FullName = true;
+        this.validates.Email = true;
+        this.validates.PhoneNumber = true;
+      }
+    }
+  },
   methods: {
     closedialog() {
       this.$emit("closedialog");
       this.customer.address = "";
-      this.customer.companyName = "";
-      this.customer.companyTaxCode = "";
-      this.customer.customerGroupName = "Nhóm khách hàng MISA";
-      this.customer.email = "";
-      this.customer.fullName = "";
-      this.customer.gender = 0;
-      this.customer.memberCardCode = "";
-      this.customer.phoneNumber = "";
-      this.customer.dateOfBirth = null;
-      this.customer.customerCode = "";
-      this.validates.CustomerCode = true;
-      this.validates.FullName = true;
-      this.validates.Email = true;
-      this.validates.PhoneNumber = true;
+        this.customer.companyName = "";
+        this.customer.companyTaxCode = "";
+        this.customer.customerGroupName = "Nhóm khách hàng MISA";
+        this.customer.email = "";
+        this.customer.fullName = "";
+        this.customer.gender = 0;
+        this.customer.memberCardCode = "";
+        this.customer.phoneNumber = "";
+        this.customer.dateOfBirth = null;
+        this.customer.customerCode = "";
+        this.validates.CustomerCode = true;
+        this.validates.FullName = true;
+        this.validates.Email = true;
+        this.validates.PhoneNumber = true;
     },
     save() {
-      var vm = this;
-      console.log(vm.customer);
-      if (vm.validate()) {
-        if (vm.msg == "post") {
-            this.$store.dispatch('insertCustomer', vm.customer);
+      console.log("save");
+      console.log(this.customer);
+      if (this.validate()) {
+        if (this.msg == "post") {
+            this.$store.dispatch('insertCustomer', this.customer);
             this.closedialog();
+        }
+        if (this.msg == "put") {
+          alert("put");
+          console.log("vm.customer");
+          console.log(this.customer);
+          var updateCustomer = this.customer;
+          updateCustomer.customerId = this.id;
+          this.$store.dispatch('updateCustomer', updateCustomer);
+          this.closedialog();
         }
       }
     },
@@ -263,7 +354,7 @@ export default {
       } else {
         this.validates.FullName = true;
       }
-      if (
+      if (this.customer.phoneNumber == null ||
         this.customer.phoneNumber == "" ||
         !this.customer.phoneNumber.match(phonenumber)
       ) {
@@ -272,7 +363,7 @@ export default {
       } else {
         this.validates.PhoneNumber = true;
       }
-      if (!this.customer.email.match(mailformat) && this.customer.email != "") {
+      if (this.customer.email != null && this.customer.email != "" && !this.customer.email.match(mailformat)) {
         this.validates.Email = false;
         return false;
       } else {
@@ -286,6 +377,15 @@ export default {
 
 <style scoped>
 /* css dialog sửa xóa khách hàng */
+.button-close:hover {
+  background-color:  #e5e5e5;
+  cursor: pointer;
+}
+.button-close img{
+  width: 24px;
+  height: 24px;
+  opacity: 0.6;
+}
 .warning {
   border-color: red !important ;
 }
@@ -463,7 +563,7 @@ label {
   margin-left: 0px;
 }
 .footer {
-  padding-right: 20px;
+  padding-right: 32px;
   text-align: right;
   vertical-align: middle;
   background-color: #E9EBEE;
@@ -480,6 +580,8 @@ label {
   margin-right: 16px;
   margin-top: 10px;
   vertical-align: middle;
+  border-radius: 4px;
+  border: 1px solid #E9EBEE;
 }
 .button-delete:hover{
   border: 1px solid #bbbbbb;
