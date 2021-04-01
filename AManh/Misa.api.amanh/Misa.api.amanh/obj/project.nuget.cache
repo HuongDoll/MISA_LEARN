@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "dgSpecHash": "ca/AnBWHZqmQiwnVwQdrNCHdxkAoMRiU6xvoNRE/WAToUhRW9XTdlmz+AsFagHyRVKabTIMvuIN8e62hxehD+A==",
+  "success": true,
+  "projectFilePath": "H:\\MISA.Web2021_03\\MISA_LEARN\\AManh\\Misa.api.amanh\\Misa.api.amanh\\Misa.api.amanh.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Admin\\.nuget\\packages\\dapper\\2.0.78\\dapper.2.0.78.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\mysqlclient\\5.4.2\\mysqlclient.5.4.2.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\mysqlconnector\\1.3.2\\mysqlconnector.1.3.2.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\optimizeddatareader\\1.1.0\\optimizeddatareader.1.1.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\savage.data\\5.4.2\\savage.data.5.4.2.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.6.3\\swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.6.3\\swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512"
+  ],
+  "logs": []
+}
