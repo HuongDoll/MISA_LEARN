@@ -1,12 +1,12 @@
-﻿using System;
+﻿using Dapper;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using MySqlConnector;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
-using Dapper;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using MySql.Data.MySqlClient;
 
 namespace MISA.CukCuk.Controllers
 {
@@ -33,14 +33,14 @@ namespace MISA.CukCuk.Controllers
         /// Lấy toàn bộ dữ liệu
         /// </summary>
         /// <returns>Nếu có dữ liệu: trả vễ HttpCode 200; 204 nếu không có dữ liệu</returns>
-        /// CreatedBy: NVMANH (01/04/2021)
+        /// CreatedBy: huongdoll (01/04/2021)
         [HttpGet]
 
         public IActionResult Get()
         {
             // lấy dữ liệu từ database
             var storename = $"Proc_Get{_tableName}s";
-            var entities = _dbConnection.Query<MISAEntity>(storename, commandType: CommandType.StoredProcedure);
+            var entities = _dbConnection.Query<MISAEntity>(storename,commandType: CommandType.StoredProcedure);
             // Kiểm tra dữ liệu trả về
             if (entities.Count() == 0)
             {
@@ -69,5 +69,35 @@ namespace MISA.CukCuk.Controllers
             }
         }
 
+        /// <summary>
+        /// Thêm mới
+        /// </summary>
+        /// <param name="entity">Khách hàng muốn thêm mới</param>
+        /// <returns>
+        ///  - HttpCode: 200 nếu thêm được dữ liệu
+        ///  - Lỗi dữ liệu không hợp lệ : 400 (BadRequest)
+        ///  - HttpCode: 500 nếu có lỗi hoặc Exceotion xảy ra trên Server
+        /// </returns>
+        /// CreatedBy: huongdoll (01/04/2021)
+        [HttpPost]
+        public IActionResult Post(MISAEntity entity)
+        {
+            // Validate dữ liệu:
+            ValidateData(entity);
+            // Thực hiện lấy dữ liệu từ Database:
+            var storeName = $"Proc_Insert{_tableName}";
+            var storeParam = entity;
+            var rowAffects = _dbConnection.Execute(storeName, param: storeParam, commandType: CommandType.StoredProcedure);
+            // Kiểm tra kết quả và trả về cho Client:
+            if (rowAffects == 0)
+                return NoContent();
+            else
+                return Ok(entity);
+        }
+
+        protected virtual void ValidateData(MISAEntity entity)
+        {
+
+        }
     }
 }
