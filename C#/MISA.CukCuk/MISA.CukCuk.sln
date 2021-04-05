@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31129.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MISA.CukCuk", "MISA.CukCuk\MISA.CukCuk.csproj", "{12DCE733-238F-4699-ACB5-F749E9639C7E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MISA.CukCuk", "MISA.CukCuk\MISA.CukCuk.csproj", "{12DCE733-238F-4699-ACB5-F749E9639C7E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MISA.Core", "MISA.Core\MISA.Core.csproj", "{79C3CFBD-72FA-44BC-8BE9-0959DE307FB6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MISA.Infrastructure", "MISA.Infrastructure\MISA.Infrastructure.csproj", "{0CE2E636-CBEB-4223-A9B8-09FD2CF0EE53}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{12DCE733-238F-4699-ACB5-F749E9639C7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{12DCE733-238F-4699-ACB5-F749E9639C7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{12DCE733-238F-4699-ACB5-F749E9639C7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79C3CFBD-72FA-44BC-8BE9-0959DE307FB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79C3CFBD-72FA-44BC-8BE9-0959DE307FB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79C3CFBD-72FA-44BC-8BE9-0959DE307FB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79C3CFBD-72FA-44BC-8BE9-0959DE307FB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CE2E636-CBEB-4223-A9B8-09FD2CF0EE53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CE2E636-CBEB-4223-A9B8-09FD2CF0EE53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CE2E636-CBEB-4223-A9B8-09FD2CF0EE53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CE2E636-CBEB-4223-A9B8-09FD2CF0EE53}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
