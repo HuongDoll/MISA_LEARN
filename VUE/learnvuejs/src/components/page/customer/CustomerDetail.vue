@@ -32,6 +32,7 @@
                     type="text"
                     id="CustomerCode"
                     v-model="customer.customerCode"
+                    ref="CustomerCode"
                   />
                 </div>
                 <div class="group wight-1-2">
@@ -41,6 +42,7 @@
                     type="text"
                     id="FullName"
                     v-model="customer.fullName"
+                    ref="FullName"
                   />
                 </div>
               </div>
@@ -128,6 +130,7 @@
                 type="text"
                 placeholder="example@domain.com"
                 id="Email"
+                ref="Email"
                 v-model="customer.email"
               />
             </div>
@@ -137,6 +140,7 @@
                 v-bind:class="{ warning: !validates.PhoneNumber }"
                 type="text"
                 id="PhoneNumber"
+                ref="PhoneNumber"
                 v-model="customer.phoneNumber"
               />
             </div>
@@ -329,47 +333,56 @@ export default {
             this.closedialog();
         }
         if (this.msg == "put") {
-          alert("put");
           console.log("vm.customer");
           console.log(this.customer);
           var updateCustomer = this.customer;
           updateCustomer.customerId = this.id;
+          console.log(updateCustomer);
           this.$store.dispatch('updateCustomer', updateCustomer);
           this.closedialog();
         }
       }
     },
     validate() {
+      var isvalidate = true;
       var phonenumber = /^\d{10}$/;
       var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-      if (this.customer.customerCode == "") {
-        this.validates.CustomerCode = false;
-        return false;
+      
+      if (this.customer.email != null && this.customer.email != "" && !this.customer.email.match(mailformat)) {
+        this.validates.Email = false;
+        this.$refs.Email.focus();
+        isvalidate = false;
       } else {
-        this.validates.CustomerCode = true;
+        this.validates.Email = true;
       }
-      if (this.customer.fullName == "") {
-        this.validates.FullName = false;
-        return false;
-      } else {
-        this.validates.FullName = true;
-      }
+      
       if (this.customer.phoneNumber == null ||
         this.customer.phoneNumber == "" ||
         !this.customer.phoneNumber.match(phonenumber)
       ) {
         this.validates.PhoneNumber = false;
-        return false;
+        this.$refs.PhoneNumber.focus();
+        isvalidate = false;
       } else {
         this.validates.PhoneNumber = true;
       }
-      if (this.customer.email != null && this.customer.email != "" && !this.customer.email.match(mailformat)) {
-        this.validates.Email = false;
-        return false;
+      
+      if (this.customer.fullName == "") {
+        this.validates.FullName = false;
+        this.$refs.FullName.focus();
+       isvalidate = false;
       } else {
-        this.validates.Email = true;
+        this.validates.FullName = true;
       }
-      return true;
+
+      if (this.customer.customerCode == "") {
+        this.validates.CustomerCode = false;
+        this.$refs.CustomerCode.focus();
+        isvalidate = false;
+      } else {
+        this.validates.CustomerCode = true;
+      }
+      return isvalidate;
     },
   },
 };

@@ -10,7 +10,7 @@ const store = new Vuex.Store({
     },
     getters: {
         getCustomers(state) {
-            console.log("getter " + state.customers)
+            // console.log("getter " + state.customers)
             return state.customers
         },
         getCustomerById(state){
@@ -28,7 +28,7 @@ const store = new Vuex.Store({
             console.log(state.customers)
         },
         addCustomer(state, customer) {
-            state.customers.push(customer);
+            state.customers.unshift(customer);
             console.log(state.customers);
         },
         getCustomerById(state, customerId){
@@ -50,7 +50,7 @@ const store = new Vuex.Store({
         },
         deleteCustomer(context, customerId) {
 
-            axios.delete('https://localhost:44384/api/customer/' + customerId)
+            axios.delete('https://localhost:44379/api/customer/' + customerId)
                 .then(response => {
                     console.log(response)
                     alert("delete success!")
@@ -64,12 +64,12 @@ const store = new Vuex.Store({
         insertCustomer(context, customer){
             axios({
                 method: "post",
-                url: "https://localhost:44384/api/customer",
+                url: "https://localhost:44379/api/customer",
                 data: customer,
             }).then(response => {
                 alert(" success!")
-                console.log(response.data.data);
-                context.commit("addCustomer", response.data.data)
+                console.log(JSON.parse(response.config.data));
+                context.commit("addCustomer", JSON.parse(response.config.data))
             })
             .catch(error => {
                 console.log(error);
@@ -81,13 +81,14 @@ const store = new Vuex.Store({
             console.log(customer);
             axios({
                 method: "put",
-                url: 'https://localhost:44384/api/customer/' + customer.customerId,
+                url: 'https://localhost:44379/api/customer/' + customer.customerId,
                 data: customer,
             }).then(response => {
                 alert(" success!")
-                console.log(response.data.data);
+                console.log("response.data");
+                console.log(JSON.parse(response.config.data));
                 context.commit("removeCustomer", customer.customerId);
-                context.commit("addCustomer", response.data.data);
+                context.commit("addCustomer", JSON.parse(response.config.data));
             })
             .catch(error => {
                 console.log(error);
