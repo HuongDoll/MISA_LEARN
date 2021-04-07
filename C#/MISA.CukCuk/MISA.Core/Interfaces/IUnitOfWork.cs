@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace MISA.Core.Interfaces
 {
-    interface IUnitOfWork
+    public interface IUnitOfWork
     {
+        ICustomerRepository Customer { get; }
+        ICustomerGroupRepository GroupCustomer { get; }
+
     }
 }

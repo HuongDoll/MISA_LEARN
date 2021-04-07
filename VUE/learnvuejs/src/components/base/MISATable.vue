@@ -116,7 +116,7 @@ export default {
 table{
     margin: 0;
 }
-tr:nth-child(even){background-color: #E9EBEE ;}
+/* tr:nth-child(even){background-color: #E9EBEE ;} */
 .table-eml{
     width: 100%;
     height: calc(100vh - 240px);

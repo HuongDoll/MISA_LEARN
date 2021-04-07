@@ -41,10 +41,10 @@ const store = new Vuex.Store({
         },
         getCustomers(context) {
             console.log("actions")
-            axios.get('https://localhost:44384/api/customer')
+            axios.get('https://localhost:44379/api/Customer')
                 .then(response => {
                     console.log(response)
-                    context.commit("setCustomers", response.data.data)
+                    context.commit("setCustomers", response.data)
                 })
 
         },

@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using MISA.Core.Interfaces;
 using MySqlConnector;
 using System;
 using System.Collections.Generic;
@@ -14,18 +15,10 @@ namespace MISA.CukCuk.Controllers
     [ApiController]
     public abstract class BaseEntityController<MISAEntity> : ControllerBase
     {
-        protected string _tableName = string.Empty;
-        protected string _connectionString = "" +
-               "Host=47.241.69.179; " +
-               "Port=3306;" +
-               "User Id= dev; " +
-               "Password=12345678;" +
-               "Database= MF0_NVManh_CukCuk02";
-        protected IDbConnection _dbConnection;
-        public BaseEntityController()
+        IBaseService<MISAEntity> _baseService;
+        public BaseEntityController(IBaseService<MISAEntity> baseService)
         {
-            _tableName = typeof(MISAEntity).Name;
-            _dbConnection = new MySqlConnection(_connectionString);
+            _baseService = baseService;
         }
 
 
@@ -39,8 +32,8 @@ namespace MISA.CukCuk.Controllers
         public IActionResult Get()
         {
             // lấy dữ liệu từ database
-            var storename = $"Proc_Get{_tableName}s";
-            var entities = _dbConnection.Query<MISAEntity>(storename,commandType: CommandType.StoredProcedure);
+
+            var entities = _baseService.GetEntities();
             // Kiểm tra dữ liệu trả về
             if (entities.Count() == 0)
             {
@@ -53,19 +46,18 @@ namespace MISA.CukCuk.Controllers
         }
 
         [HttpGet("{entityId}")]
-        public IActionResult Get(string entityId)
+        public IActionResult Get(Guid entityId)
         {
             // lấy dữ liệu từ database
-            var storeName = $"Proc_Get{_tableName}ById";
-            var entities = _dbConnection.Query<MISAEntity>(storeName, commandType: CommandType.StoredProcedure);
+            var entitie = _baseService.GetById(entityId);
             // Kiểm tra dữ liệu trả về
-            if (entities.Count() == 0)
+            if (entitie == null)
             {
                 return NoContent();
             }
             else
             {
-                return Ok(entities);
+                return Ok(entitie);
             }
         }
 
@@ -82,22 +74,46 @@ namespace MISA.CukCuk.Controllers
         [HttpPost]
         public IActionResult Post(MISAEntity entity)
         {
-            // Validate dữ liệu:
-            ValidateData(entity);
-            // Thực hiện lấy dữ liệu từ Database:
-            var storeName = $"Proc_Insert{_tableName}";
-            var storeParam = entity;
-            var rowAffects = _dbConnection.Execute(storeName, param: storeParam, commandType: CommandType.StoredProcedure);
-            // Kiểm tra kết quả và trả về cho Client:
-            if (rowAffects == 0)
+            var row = _baseService.Insert(entity);
+            // Kiểm tra dữ liệu trả về
+            if (row == 0)
+            {
                 return NoContent();
+            }
             else
-                return Ok(entity);
+            {
+                return Ok(row);
+            }
         }
 
-        protected virtual void ValidateData(MISAEntity entity)
+        [HttpPut("{entityId}")]
+        public IActionResult Put(MISAEntity entity, Guid entityId)
         {
+            var row = _baseService.UpDate(entity, entityId);
+            // Kiểm tra dữ liệu trả về
+            if (row == 0)
+            {
+                return NoContent();
+            }
+            else
+            {
+                return Ok(row);
+            }
+        }
 
+        [HttpDelete("{entityId}")]
+        public IActionResult Delete(Guid entityId)
+        {
+            var row = _baseService.Delete(entityId);
+            // Kiểm tra dữ liệu trả về
+            if (row == 0)
+            {
+                return NoContent();
+            }
+            else
+            {
+                return Ok(row);
+            }
         }
     }
 }

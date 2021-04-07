@@ -9,6 +9,7 @@ namespace MISA.Core.Entities
     /// <summary>
     /// thông tin khách hàng
     /// Created by HuongDoll
+    /// Created by HuongDoll 05/04/2021
     /// </summary>
     public class Customer : BaseEntity
     {/// <summary>

@@ -1,0 +1,15 @@
+C:\Users\hthuong\source\MISA_LEARN\C#\MISA.CukCuk\MISA.Infrastructure\bin\Debug\net5.0\MISA.Core.dll
+C:\Users\hthuong\source\MISA_LEARN\C#\MISA.CukCuk\MISA.Infrastructure\obj\Debug\net5.0\MISA.Infrastructure.csprojAssemblyReference.cache
+C:\Users\hthuong\source\MISA_LEARN\C#\MISA.CukCuk\MISA.Infrastructure\obj\Debug\net5.0\MISA.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hthuong\source\MISA_LEARN\C#\MISA.CukCuk\MISA.Infrastructure\obj\Debug\net5.0\MISA.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\hthuong\source\MISA_LEARN\C#\MISA.CukCuk\MISA.Infrastructure\obj\Debug\net5.0\MISA.Infrastructure.AssemblyInfo.cs
+C:\Users\hthuong\source\MISA_LEARN\C#\MISA.CukCuk\MISA.Infrastructure\bin\Debug\net5.0\MISA.Infrastructure.deps.json
+C:\Users\hthuong\source\MISA_LEARN\C#\MISA.CukCuk\MISA.Infrastructure\bin\Debug\net5.0\MISA.Infrastructure.dll
+C:\Users\hthuong\source\MISA_LEARN\C#\MISA.CukCuk\MISA.Infrastructure\bin\Debug\net5.0\ref\MISA.Infrastructure.dll
+C:\Users\hthuong\source\MISA_LEARN\C#\MISA.CukCuk\MISA.Infrastructure\bin\Debug\net5.0\MISA.Infrastructure.pdb
+C:\Users\hthuong\source\MISA_LEARN\C#\MISA.CukCuk\MISA.Infrastructure\bin\Debug\net5.0\MISA.Core.pdb
+C:\Users\hthuong\source\MISA_LEARN\C#\MISA.CukCuk\MISA.Infrastructure\obj\Debug\net5.0\MISA.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\hthuong\source\MISA_LEARN\C#\MISA.CukCuk\MISA.Infrastructure\obj\Debug\net5.0\MISA.Infrastructure.csproj.CopyComplete
+C:\Users\hthuong\source\MISA_LEARN\C#\MISA.CukCuk\MISA.Infrastructure\obj\Debug\net5.0\MISA.Infrastructure.dll
+C:\Users\hthuong\source\MISA_LEARN\C#\MISA.CukCuk\MISA.Infrastructure\obj\Debug\net5.0\ref\MISA.Infrastructure.dll
+C:\Users\hthuong\source\MISA_LEARN\C#\MISA.CukCuk\MISA.Infrastructure\obj\Debug\net5.0\MISA.Infrastructure.pdb

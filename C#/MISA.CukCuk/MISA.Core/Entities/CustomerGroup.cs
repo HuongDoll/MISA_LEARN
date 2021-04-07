@@ -8,6 +8,7 @@ namespace MISA.Core.Entities
 {
     /// <summary>
     /// Thông tin nhóm khách hàng
+    /// Created by HuongDoll 05/04/2021
     /// </summary>
     public class CustomerGroup : BaseEntity
     {
