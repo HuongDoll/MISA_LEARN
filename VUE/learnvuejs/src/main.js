@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import axios from 'axios'
+import VueAxios from 'vue-axios'
 import App from './App.vue'
 import VueRouter from 'vue-router'
 import CustomerList from './components/page/customer/CustomerList.vue'
@@ -11,7 +12,7 @@ import store from './store/index'
 
 Vue.config.productionTip = false
 Vue.use(VueRouter)
-Vue.use(axios)
+Vue.use(VueAxios, axios)
 
 
 const routes = [

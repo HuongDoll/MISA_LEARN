@@ -28,7 +28,7 @@
                         <option>Tất cả vị trí</option>
                         <option>Tất cả vị trí</option>
                     </select>
-                    <button type="button" class="button-refresh" id="button-refresh"> 
+                    <button type="button" class="button-refresh" id="button-refresh" @click="refresh"> 
                         <img src="../../assets/content/icon/refresh.png">
                     </button>
                 </div>
@@ -50,6 +50,9 @@ export default {
   methods:{
       opendialog(){
           this.$emit('opendialog');
+      },
+      refresh(){
+          this.$store.dispatch('getCustomers');
       }
   }
 }
@@ -114,7 +117,7 @@ export default {
     border-radius: 4px;
 }
 .button-refresh:hover{
-    background-color: #019160;
+    background-color: #BBBBBB;
     color: #000000;
 }
 .box-form-select{

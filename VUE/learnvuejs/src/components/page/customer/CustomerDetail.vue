@@ -32,7 +32,9 @@
                     type="text"
                     id="CustomerCode"
                     v-model="customer.customerCode"
-                    ref="CustomerCode"
+                    ref="CustomerCode" 
+                    @blur="tab('customerCode')"
+                    
                   />
                 </div>
                 <div class="group wight-1-2">
@@ -43,6 +45,7 @@
                     id="FullName"
                     v-model="customer.fullName"
                     ref="FullName"
+                    @blur="tab('fullName')"
                   />
                 </div>
               </div>
@@ -61,10 +64,10 @@
                     id="CustomerGroupName"
                     v-model="customer.customerGroupName"
                   >
-                    <option value="Nhóm khách hàng MISA" selected>
+                    <option value="Nhóm khách hàng MISA" selected >
                       Nhóm khách hàng MISA
                     </option>
-                    <option value="Khách vip">Khách vip</option>
+                    <option value="Khách vip" >Khách vip</option>
                   </select>
                 </div>
               </div>
@@ -132,6 +135,7 @@
                 id="Email"
                 ref="Email"
                 v-model="customer.email"
+                    @blur="tab('email')"
               />
             </div>
             <div class="group wight-1-3">
@@ -142,6 +146,7 @@
                 id="PhoneNumber"
                 ref="PhoneNumber"
                 v-model="customer.phoneNumber"
+                    @blur="tab('phoneNumber')"
               />
             </div>
           </div>
@@ -179,6 +184,7 @@
           class="button-delete"
           id="button-delete"
           @click="closedialog()"
+          tabindex="0"
         >
           HỦY
         </button>
@@ -187,6 +193,7 @@
           class="button-save"
           id="button-save"
           @click="save()"
+          tabindex="0"
         >
           <span><i class="far fa-save"></i></span>
           <span>LƯU</span>
@@ -257,7 +264,7 @@ export default {
         this.customer.gender = customerUpdate[0].gender;
         this.customer.memberCardCode = customerUpdate[0].memberCardCode;
         this.customer.phoneNumber = customerUpdate[0].phoneNumber;
-        this.customer.dateOfBirth = customerUpdate[0].dateOfBirth;
+        this.customer.dateOfBirth = this.formatDate( customerUpdate[0].dateOfBirth);
         this.customer.customerCode = customerUpdate[0].customerCode;
         this.validates.CustomerCode = true;
         this.validates.FullName = true;
@@ -283,6 +290,7 @@ export default {
         this.validates.FullName = true;
         this.validates.Email = true;
         this.validates.PhoneNumber = true;
+        this.$refs.CustomerCode.focus();
       }else{
         this.$store.dispatch('getCustomerById', this.id);
         var customerUpdate = this.$store.getters.getCustomerById;
@@ -296,33 +304,77 @@ export default {
         this.customer.gender = customerUpdate[0].gender;
         this.customer.memberCardCode = customerUpdate[0].memberCardCode;
         this.customer.phoneNumber = customerUpdate[0].phoneNumber;
-        this.customer.dateOfBirth = customerUpdate[0].dateOfBirth;
+        this.customer.dateOfBirth = this.formatDate(customerUpdate[0].dateOfBirth);
         this.customer.customerCode = customerUpdate[0].customerCode;
         this.validates.CustomerCode = true;
         this.validates.FullName = true;
         this.validates.Email = true;
         this.validates.PhoneNumber = true;
+        this.$refs.CustomerCode.focus();
       }
     }
   },
   methods: {
+    tab(nameInput){
+      console.log(nameInput);
+      console.log(this.customer[nameInput]);
+
+      var phonenumber = /^\d{10}$/;
+      var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+      if(nameInput === "email"){
+        if (this.customer.email != null && this.customer.email != "" && !this.customer.email.match(mailformat)) {
+          this.validates.Email = false;
+        } else {
+          this.validates.Email = true;
+        }
+      }
+      
+      if(nameInput === "phoneNumber"){
+        if ( this.customer.phoneNumber == null ||
+        this.customer.phoneNumber == "" ||
+        !this.customer.phoneNumber.match(phonenumber)
+        ) {
+          this.validates.PhoneNumber = false;
+        } else {
+          this.validates.PhoneNumber = true;
+        }
+      }
+      
+      if(nameInput === "fullName"){
+        if ( this.customer.fullName == "") {
+          this.validates.FullName = false;
+        } else {
+          this.validates.FullName = true;
+        }
+      }
+      
+      if(nameInput === "customerCode"){
+        if (this.customer.customerCode == "") {
+          this.validates.CustomerCode = false;
+        } else {
+          this.validates.CustomerCode = true;
+        }
+      }
+      
+    },
+    formatDate(datee) {
+      if(datee != null){
+          var date = new Date(datee);
+          var year = date.getFullYear();
+      
+          var month = (1 + date.getMonth()).toString();
+          month = month.length > 1 ? month : '0' + month;
+      
+          var day = date.getDate().toString();
+          day = day.length > 1 ? day : '0' + day;
+      
+          return year + "-" + month + "-" + day;
+      }else return null;
+      
+    },
     closedialog() {
       this.$emit("closedialog");
-      this.customer.address = "";
-        this.customer.companyName = "";
-        this.customer.companyTaxCode = "";
-        this.customer.customerGroupName = "Nhóm khách hàng MISA";
-        this.customer.email = "";
-        this.customer.fullName = "";
-        this.customer.gender = 0;
-        this.customer.memberCardCode = "";
-        this.customer.phoneNumber = "";
-        this.customer.dateOfBirth = null;
-        this.customer.customerCode = "";
-        this.validates.CustomerCode = true;
-        this.validates.FullName = true;
-        this.validates.Email = true;
-        this.validates.PhoneNumber = true;
+      
     },
     save() {
       console.log("save");
@@ -521,6 +573,9 @@ export default {
   border: 1px solid #bbbbbb;
   outline: none;
 }
+.group select:focus{
+  border: 1px solid #019160;
+}
 .group-input .group label {
   padding-bottom: 4px;
   display: block;
@@ -596,7 +651,7 @@ label {
   border-radius: 4px;
   border: 1px solid #E9EBEE;
 }
-.button-delete:hover{
+.button-delete:hover, .button-delete:focus{
   border: 1px solid #bbbbbb;
 }
 .button-save {
@@ -612,7 +667,7 @@ label {
   padding-left: 8px;
   padding-right: 16px;
 }
-.button-save:hover{
+.button-save:hover, .button-save:focus{
   background-color: #2FBE8E;
 }
 .button-save span {
